@@ -30,3 +30,6 @@ robot /path_to_your_directory/
 
 - If you want to run specific tests based on tags, you can do so with the following command:
 robot -i tagname /path_to_your_directory/
+
+- Parallel test execution
+  pabot --processes 3 /path_to_your_tests directory/
