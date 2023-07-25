@@ -1,0 +1,120 @@
+==============================================================================
+Tests                                                                         
+==============================================================================
+Tests.Login Tests :: A test suite with tests for login functionality.         
+==============================================================================
+Successful Login with Valid Credentials :: Test successful login w... | PASS |
+------------------------------------------------------------------------------
+Successful Login with Problem User :: Test successful login with p... | PASS |
+------------------------------------------------------------------------------
+Successful Login with Performance Glitch User :: Test successful l... | PASS |
+------------------------------------------------------------------------------
+Unsuccessful Login with Invalid Username :: Test unsuccessful logi... | PASS |
+------------------------------------------------------------------------------
+Unsuccessful Login with Invalid Password :: Test unsuccessful logi... | PASS |
+------------------------------------------------------------------------------
+Unsuccessful Login with Empty Username :: Test unsuccessful login ... | PASS |
+------------------------------------------------------------------------------
+Unsuccessful Login with Empty Password :: Test unsuccessful login ... | PASS |
+------------------------------------------------------------------------------
+Unsuccessful Login with Locked User :: Test unsuccessful login wit... | PASS |
+------------------------------------------------------------------------------
+Unsuccessful Login with Case Insensitive Username :: Test unsucces... | PASS |
+------------------------------------------------------------------------------
+Login Resilient to SQL Injection Attacks :: Test login feature is ... | PASS |
+------------------------------------------------------------------------------
+Login Session Timeout :: Test login session timeout after a period...   
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\Admin\PycharmProjects\SauceDemoAssignment\tests\login_tests.robot:95
+    T:  Login Session Timeout    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\Admin\PycharmProjects\SauceDemoAssignment\tests\login_tests.robot:101
+      Reload Page    
+______________________________________________________________________________
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\Admin\PycharmProjects\SauceDemoAssignment\tests\login_tests.robot:95
+    T:  Login Session Timeout    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\Admin\PycharmProjects\SauceDemoAssignment\tests\login_tests.robot:10
+      Run Keywords    Capture Screenshot If Failed    AND    Close Application
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\Admin\PycharmProjects\SauceDemoAssignment\tests\login_tests.robot:10
+      Capture Screenshot If Failed    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\Admin\PycharmProjects\SauceDemoAssignment\keywords\app_keywords.robot:33
+      Run Keyword If Test Failed    Capture Page Screenshot    filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png
+      |  filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png = filename=screenshots/Tests.Login Tests_Login Session Timeout_fail.png (str)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\Admin\PycharmProjects\SauceDemoAssignment\keywords\app_keywords.robot:33
+      Capture Page Screenshot    filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png
+      |  filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png = filename=screenshots/Tests.Login Tests_Login Session Timeout_fail.png (str)
+______________________________________________________________________________
+| FAIL |
+WebDriverException: Message: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x007CA813+48355]
+	(No symbol) [0x0075C4B1]
+	(No symbol) [0x00665358]
+	(No symbol) [0x00657D96]
+	(No symbol) [0x00657AB9]
+	(No symbol) [0x006667C0]
+	(No symbol) [0x006BC4D8]
+	(No symbol) [0x006AA536]
+	(No symbol) [0x006882DC]
+	(No symbol) [0x006893DD]
+	GetHandleVerifier [0x00A2AABD+2539405]
+	GetHandleVerifier [0x00A6A78F+2800735]
+	GetHandleVerifier [0x00A6456C+2775612]
+	GetHandleVerifier [0x008551E0+616112]
+	(No symbol) [0x00765F8C]
+	(No symbol) [0x00762328]
+	(No symbol) [0x0076240B]
+	(No symbol) [0x00754FF7]
+	BaseThreadInitThunk [0x758300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x778A7B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x778A7AEE+238]
+
+
+Also teardown failed:
+WebDriverException: Message: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x007CA813+48355]
+	(No symbol) [0x0075C4B1]
+	(No symbol) [0x00665358]
+	(No symbol) [0x00657D96]
+	(No symbol) [0x00657AB9]
+	(No symbol) [0x006667C0]
+	(No symbol) [0x006BC4D8]
+	(No symbol) [0x006AA536]
+	(No symbol) [0x006882DC]
+	(No symbol) [0x006893DD]
+	GetHandleVerifier [0x00A2AABD+2539405]
+	GetHandleVerifier [0x00A6A78F+2800735]
+	GetHandleVerifier [0x00A6456C+2775612]
+	GetHandleVerifier [0x008551E0+616112]
+	(No symbol) [0x00765F8C]
+	(No symbol) [0x00762328]
+	(No symbol) [0x0076240B]
+	(No symbol) [0x00754FF7]
+	BaseThreadInitThunk [0x758300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x778A7B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x778A7AEE+238]
+------------------------------------------------------------------------------
+Unsuccessful Login with Whitespace in Username and Password :: Tes... | PASS |
+------------------------------------------------------------------------------
+Tests.Login Tests :: A test suite with tests for login functionality. | FAIL |
+12 tests, 11 passed, 1 failed
+==============================================================================
+Tests                                                                 | FAIL |
+12 tests, 11 passed, 1 failed
+==============================================================================
+Output:  C:\Users\Admin\PycharmProjects\SauceDemoAssignment\reports\pabot_results\2\output.xml

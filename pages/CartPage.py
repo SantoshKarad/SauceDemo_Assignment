@@ -6,9 +6,9 @@ import variables.locators as loc
 
 
 class CartPage(BasePage):
-    def __init__(self,):
-        self.add_to_cart_button_locator = (By.CSS_SELECTOR, "button.add-to-cart")
-        self.remove_from_cart_button_locator = (By.CSS_SELECTOR, "button.remove-from-cart")
+    def __init__(self, ):
+        self.add_to_cart_button_locator = (By.CSS_SELECTOR, loc.add_to_cart_button_locator)
+        self.remove_from_cart_button_locator = (By.CSS_SELECTOR, loc.remove_from_cart_button_locator)
         self.cart_count_locator = (By.XPATH, loc.cart_count_locator)
         self.checkout_button_locator = (By.XPATH, loc.checkout_button)
         self.continue_shopping_button_locator = (By.ID, loc.continue_shopping_button_locator)

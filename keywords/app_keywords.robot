@@ -52,25 +52,10 @@ Select Product
     Wait Until Element Is Visible    ${product_locator}
     Click Element    ${product_locator}
 
-Select Products
-    [Arguments]    @{products}
-    FOR    ${product}    IN    @{products}
-        Select Product    ${product}
-        Go To Products Page
-    END
-
 Add Product To Cart
     [Arguments]    ${add_to_cart_button_locator}
     Wait Until Element Is Visible    ${add_to_cart_button_locator}
     Click Element    ${add_to_cart_button_locator}
-
-Add Products To Cart
-    [Arguments]    @{products}
-    FOR    ${product}    IN    @{products}
-        Select Product    ${product}
-        Add Product To Cart    ${product}
-        Go To Products Page
-    END
 
 Go To Cart Page
     ${cart_button_locator}=    Set Variable    ${cart_button_locator}
@@ -84,10 +69,6 @@ Get Cart Count
 Remove Product From Cart
     [Arguments]    ${remove_button_locator}
     Click Element    ${remove_button_locator}
-
-Clear Cart
-    ${clear_cart_locator}=    Set Variable    ${clear_cart}
-    Click Element    ${clear_cart_locator}
 
 Proceed To Checkout
     ${checkout_button_locator}=    Set Variable    ${checkout_button}
@@ -137,8 +118,7 @@ Setup Test For Cart
 Setup Test For Checkout
     Open Application
     Login    ${standard_user}    ${password}
-    Select Products    ${Add_to_cart_product_1}
-    Add Products To Cart
+    Add Product To Cart    ${Add_to_cart_product_1}
     Go To Cart Page
     Go To Checkout
 
@@ -158,12 +138,12 @@ Finish Checkout
     Click Button    ${finish_button}
 
 Is Order Confirmation Message Displayed
-    ${confirmation_message_locator}=    Set Variable    ${confirmation_message}  # replace with actual locator
+    ${confirmation_message_locator}=    Set Variable    ${confirmation_message}
     ${confirmation_message_displayed}=    Run Keyword And Return Status    Page Should Contain Element    ${confirmation_message_locator}
     [Return]    ${confirmation_message_displayed}
 
 Go To Products Page
-    Click Button    ${back_to_products_button}
+    Click Button    ${cart_button_locator}
 
 Is Product In Cart
     [Arguments]    ${product_locator}

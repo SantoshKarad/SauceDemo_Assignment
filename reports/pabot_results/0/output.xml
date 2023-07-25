@@ -1,0 +1,1879 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230726 00:23:03.970" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="C:\Users\Admin\PycharmProjects\SauceDemoAssignment\tests">
+<suite id="s1-s1" name="Cart Tests" source="C:\Users\Admin\PycharmProjects\SauceDemoAssignment\tests\cart_tests.robot">
+<test id="s1-s1-t1" name="Verify a product can be added to the cart" line="14">
+<kw name="Setup Test For Cart" library="app_keywords" type="SETUP">
+<kw name="Open Application" library="app_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:23:04.186" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:23:04.186" endtime="20230726 00:23:10.132"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:23:10.132" endtime="20230726 00:23:10.247"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:04.185" endtime="20230726 00:23:10.247"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${standard_user}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:10.248" level="INFO">Typing text 'standard_user' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:10.247" endtime="20230726 00:23:10.412"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:10.413" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:10.412" endtime="20230726 00:23:10.511"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:10.512" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:10.511" endtime="20230726 00:23:10.619"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:10.247" endtime="20230726 00:23:10.621"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:04.185" endtime="20230726 00:23:10.621"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test adding a product to the cart started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:10.622" level="INFO">${timestamp} = 2023-07-26 00:23:10</msg>
+<status status="PASS" starttime="20230726 00:23:10.622" endtime="20230726 00:23:10.622"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:10.622" level="INFO">2023-07-26 00:23:10 - INFO - Test adding a product to the cart started</msg>
+<status status="PASS" starttime="20230726 00:23:10.622" endtime="20230726 00:23:10.622"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:10.675" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:10.624" endtime="20230726 00:23:10.675"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:10.624" endtime="20230726 00:23:10.675"/>
+</kw>
+<msg timestamp="20230726 00:23:10.676" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:10.622" endtime="20230726 00:23:10.676"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:10.677" endtime="20230726 00:23:10.678"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:10.621" endtime="20230726 00:23:10.678"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${product_1}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230726 00:23:10.679" endtime="20230726 00:23:10.695"/>
+</kw>
+<kw name="Select Product" library="app_keywords">
+<arg>${product_1}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${product_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:23:10.696" endtime="20230726 00:23:10.716"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${product_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:10.717" level="INFO">Clicking element '//div[normalize-space()="Sauce Labs Backpack"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:10.717" endtime="20230726 00:23:10.770"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:10.695" endtime="20230726 00:23:10.770"/>
+</kw>
+<kw name="Add Product To Cart" library="app_keywords">
+<arg>${Add_to_cart_product_1}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${add_to_cart_button_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:23:10.771" endtime="20230726 00:23:10.812"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_to_cart_button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:10.813" level="INFO">Clicking element '//button[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:10.812" endtime="20230726 00:23:10.856"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:10.770" endtime="20230726 00:23:10.857"/>
+</kw>
+<kw name="Get Cart Count" library="app_keywords">
+<var>${cart_count}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${cart_count}</var>
+<arg>${cart_count_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:10.892" level="INFO">${cart_count} = 1</msg>
+<status status="PASS" starttime="20230726 00:23:10.857" endtime="20230726 00:23:10.892"/>
+</kw>
+<msg timestamp="20230726 00:23:10.893" level="INFO">${cart_count} = 1</msg>
+<status status="PASS" starttime="20230726 00:23:10.857" endtime="20230726 00:23:10.893"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${cart_count}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" starttime="20230726 00:23:10.893" endtime="20230726 00:23:10.893"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test adding a product to the cart finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:10.895" level="INFO">${timestamp} = 2023-07-26 00:23:10</msg>
+<status status="PASS" starttime="20230726 00:23:10.894" endtime="20230726 00:23:10.895"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:10.895" level="INFO">2023-07-26 00:23:10 - INFO - Test adding a product to the cart finished</msg>
+<status status="PASS" starttime="20230726 00:23:10.895" endtime="20230726 00:23:10.895"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:10.898" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:10.896" endtime="20230726 00:23:10.898"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:10.895" endtime="20230726 00:23:10.898"/>
+</kw>
+<msg timestamp="20230726 00:23:10.898" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:10.895" endtime="20230726 00:23:10.899"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:10.899" endtime="20230726 00:23:10.900"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:10.893" endtime="20230726 00:23:10.900"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:23:10.900" endtime="20230726 00:23:10.900"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:10.900" endtime="20230726 00:23:10.901"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:23:10.901" endtime="20230726 00:23:13.229"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:10.901" endtime="20230726 00:23:13.229"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:10.900" endtime="20230726 00:23:13.230"/>
+</kw>
+<doc>Test adding a product to the cart (TC101.1).</doc>
+<tag>cart</tag>
+<tag>TC101.1</tag>
+<tag>TS101</tag>
+<status status="PASS" starttime="20230726 00:23:04.184" endtime="20230726 00:23:13.230"/>
+</test>
+<test id="s1-s1-t2" name="Verify a product can be removed from the cart" line="25">
+<kw name="Setup Test For Cart" library="app_keywords" type="SETUP">
+<kw name="Open Application" library="app_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:23:13.230" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:23:13.230" endtime="20230726 00:23:20.102"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:23:20.103" endtime="20230726 00:23:20.273"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:13.230" endtime="20230726 00:23:20.273"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${standard_user}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:20.274" level="INFO">Typing text 'standard_user' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:20.274" endtime="20230726 00:23:20.723"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:20.724" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:20.723" endtime="20230726 00:23:20.828"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:20.828" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:20.828" endtime="20230726 00:23:20.941"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:20.274" endtime="20230726 00:23:20.941"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:13.230" endtime="20230726 00:23:20.941"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test removing a product from the cart started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:20.942" level="INFO">${timestamp} = 2023-07-26 00:23:20</msg>
+<status status="PASS" starttime="20230726 00:23:20.942" endtime="20230726 00:23:20.942"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:20.942" level="INFO">2023-07-26 00:23:20 - INFO - Test removing a product from the cart started</msg>
+<status status="PASS" starttime="20230726 00:23:20.942" endtime="20230726 00:23:20.942"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:20.944" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:20.943" endtime="20230726 00:23:20.944"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:20.943" endtime="20230726 00:23:20.945"/>
+</kw>
+<msg timestamp="20230726 00:23:20.945" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:20.943" endtime="20230726 00:23:20.945"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:20.945" endtime="20230726 00:23:20.945"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:20.941" endtime="20230726 00:23:20.945"/>
+</kw>
+<kw name="Select Product" library="app_keywords">
+<arg>${product_1}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${product_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:23:20.945" endtime="20230726 00:23:20.973"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${product_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:20.976" level="INFO">Clicking element '//div[normalize-space()="Sauce Labs Backpack"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:20.973" endtime="20230726 00:23:21.074"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:20.945" endtime="20230726 00:23:21.074"/>
+</kw>
+<kw name="Add Product To Cart" library="app_keywords">
+<arg>${Add_to_cart_product_1}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${add_to_cart_button_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:23:21.075" endtime="20230726 00:23:21.115"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_to_cart_button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:21.118" level="INFO">Clicking element '//button[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:21.116" endtime="20230726 00:23:21.185"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:21.075" endtime="20230726 00:23:21.185"/>
+</kw>
+<kw name="Go To Cart Page" library="app_keywords">
+<kw name="Set Variable" library="BuiltIn">
+<var>${cart_button_locator}</var>
+<arg>${cart_button_locator}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230726 00:23:21.187" level="INFO">${cart_button_locator} = //a[@class="shopping_cart_link"]</msg>
+<status status="PASS" starttime="20230726 00:23:21.186" endtime="20230726 00:23:21.187"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${cart_button_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:23:21.187" endtime="20230726 00:23:21.215"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${cart_button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:21.215" level="INFO">Clicking element '//a[@class="shopping_cart_link"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:21.215" endtime="20230726 00:23:21.267"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:21.185" endtime="20230726 00:23:21.267"/>
+</kw>
+<kw name="Remove Product From Cart" library="app_keywords">
+<arg>${Remove_from_cart_product_1}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${remove_button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:21.270" level="INFO">Clicking element '//button[@id="remove-sauce-labs-backpack"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:21.269" endtime="20230726 00:23:21.322"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:21.269" endtime="20230726 00:23:21.322"/>
+</kw>
+<kw name="Is Product In Cart" library="app_keywords">
+<var>${product_in_cart}</var>
+<arg>${product_1}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${product_in_cart}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${product_locator}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${product_locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230726 00:23:21.566" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230726 00:23:21.566" level="FAIL">Element with locator '//div[normalize-space()="Sauce Labs Backpack"]' not found.</msg>
+<status status="FAIL" starttime="20230726 00:23:21.323" endtime="20230726 00:23:21.569"/>
+</kw>
+<msg timestamp="20230726 00:23:21.570" level="INFO">${product_in_cart} = False</msg>
+<status status="PASS" starttime="20230726 00:23:21.323" endtime="20230726 00:23:21.570"/>
+</kw>
+<msg timestamp="20230726 00:23:21.570" level="INFO">${product_in_cart} = False</msg>
+<status status="PASS" starttime="20230726 00:23:21.322" endtime="20230726 00:23:21.570"/>
+</kw>
+<kw name="Should Not Be True" library="BuiltIn">
+<arg>${product_in_cart}</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="PASS" starttime="20230726 00:23:21.570" endtime="20230726 00:23:21.570"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test removing a product from the cart finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:21.570" level="INFO">${timestamp} = 2023-07-26 00:23:21</msg>
+<status status="PASS" starttime="20230726 00:23:21.570" endtime="20230726 00:23:21.571"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:21.571" level="INFO">2023-07-26 00:23:21 - INFO - Test removing a product from the cart finished</msg>
+<status status="PASS" starttime="20230726 00:23:21.571" endtime="20230726 00:23:21.571"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:21.573" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:21.572" endtime="20230726 00:23:21.574"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:21.571" endtime="20230726 00:23:21.574"/>
+</kw>
+<msg timestamp="20230726 00:23:21.574" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:21.571" endtime="20230726 00:23:21.574"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:21.574" endtime="20230726 00:23:21.574"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:21.570" endtime="20230726 00:23:21.575"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:23:21.575" endtime="20230726 00:23:21.575"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:21.575" endtime="20230726 00:23:21.575"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:23:21.577" endtime="20230726 00:23:24.188"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:21.577" endtime="20230726 00:23:24.188"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:21.575" endtime="20230726 00:23:24.189"/>
+</kw>
+<doc>Test removing a product from the cart (TC102.1).</doc>
+<tag>cart</tag>
+<tag>TC102.1</tag>
+<tag>TS102</tag>
+<status status="PASS" starttime="20230726 00:23:13.230" endtime="20230726 00:23:24.189"/>
+</test>
+<test id="s1-s1-t3" name="Verify the cart count is updated when a product is added" line="37">
+<kw name="Setup Test For Cart" library="app_keywords" type="SETUP">
+<kw name="Open Application" library="app_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:23:24.194" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:23:24.192" endtime="20230726 00:23:29.059"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:23:29.059" endtime="20230726 00:23:29.173"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:24.192" endtime="20230726 00:23:29.173"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${standard_user}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:29.175" level="INFO">Typing text 'standard_user' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:29.175" endtime="20230726 00:23:29.338"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:29.339" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:29.338" endtime="20230726 00:23:29.476"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:29.477" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:29.476" endtime="20230726 00:23:29.603"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:29.173" endtime="20230726 00:23:29.603"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:24.191" endtime="20230726 00:23:29.603"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test updating cart count when a product is added started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:29.604" level="INFO">${timestamp} = 2023-07-26 00:23:29</msg>
+<status status="PASS" starttime="20230726 00:23:29.604" endtime="20230726 00:23:29.604"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:29.605" level="INFO">2023-07-26 00:23:29 - INFO - Test updating cart count when a product is added started</msg>
+<status status="PASS" starttime="20230726 00:23:29.604" endtime="20230726 00:23:29.605"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:29.608" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:29.606" endtime="20230726 00:23:29.608"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:29.606" endtime="20230726 00:23:29.609"/>
+</kw>
+<msg timestamp="20230726 00:23:29.609" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:29.605" endtime="20230726 00:23:29.609"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:29.609" endtime="20230726 00:23:29.612"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:29.603" endtime="20230726 00:23:29.612"/>
+</kw>
+<kw name="Select Product" library="app_keywords">
+<arg>${product_1}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${product_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:23:29.614" endtime="20230726 00:23:29.664"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${product_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:29.665" level="INFO">Clicking element '//div[normalize-space()="Sauce Labs Backpack"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:29.664" endtime="20230726 00:23:29.761"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:29.613" endtime="20230726 00:23:29.762"/>
+</kw>
+<kw name="Add Product To Cart" library="app_keywords">
+<arg>${Add_to_cart_product_1}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${add_to_cart_button_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:23:29.763" endtime="20230726 00:23:29.804"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_to_cart_button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:29.805" level="INFO">Clicking element '//button[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:29.805" endtime="20230726 00:23:29.865"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:29.762" endtime="20230726 00:23:29.865"/>
+</kw>
+<kw name="Get Cart Count" library="app_keywords">
+<var>${cart_count}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${cart_count}</var>
+<arg>${cart_count_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:29.891" level="INFO">${cart_count} = 1</msg>
+<status status="PASS" starttime="20230726 00:23:29.867" endtime="20230726 00:23:29.891"/>
+</kw>
+<msg timestamp="20230726 00:23:29.892" level="INFO">${cart_count} = 1</msg>
+<status status="PASS" starttime="20230726 00:23:29.866" endtime="20230726 00:23:29.892"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${cart_count}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" starttime="20230726 00:23:29.892" endtime="20230726 00:23:29.892"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test updating cart count when a product is added finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:29.893" level="INFO">${timestamp} = 2023-07-26 00:23:29</msg>
+<status status="PASS" starttime="20230726 00:23:29.893" endtime="20230726 00:23:29.893"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:29.893" level="INFO">2023-07-26 00:23:29 - INFO - Test updating cart count when a product is added finished</msg>
+<status status="PASS" starttime="20230726 00:23:29.893" endtime="20230726 00:23:29.893"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:29.895" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:29.894" endtime="20230726 00:23:29.896"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:29.894" endtime="20230726 00:23:29.896"/>
+</kw>
+<msg timestamp="20230726 00:23:29.896" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:29.894" endtime="20230726 00:23:29.896"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:29.896" endtime="20230726 00:23:29.896"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:29.892" endtime="20230726 00:23:29.896"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:23:29.898" endtime="20230726 00:23:29.898"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:29.897" endtime="20230726 00:23:29.898"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:23:29.899" endtime="20230726 00:23:32.342"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:29.898" endtime="20230726 00:23:32.342"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:29.897" endtime="20230726 00:23:32.343"/>
+</kw>
+<doc>Test updating cart count when a product is added (TC103.1).</doc>
+<tag>cart</tag>
+<tag>TC103.1</tag>
+<tag>TS103</tag>
+<status status="PASS" starttime="20230726 00:23:24.190" endtime="20230726 00:23:32.343"/>
+</test>
+<test id="s1-s1-t4" name="Verify user can checkout with products in the cart" line="47">
+<kw name="Setup Test For Cart" library="app_keywords" type="SETUP">
+<kw name="Open Application" library="app_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:23:32.351" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:23:32.349" endtime="20230726 00:23:37.987"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:23:37.987" endtime="20230726 00:23:38.128"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:32.347" endtime="20230726 00:23:38.129"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${standard_user}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:38.134" level="INFO">Typing text 'standard_user' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:38.130" endtime="20230726 00:23:38.461"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:38.463" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:38.461" endtime="20230726 00:23:38.638"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:38.640" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:38.639" endtime="20230726 00:23:38.822"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:38.129" endtime="20230726 00:23:38.823"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:32.346" endtime="20230726 00:23:38.823"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test checking out with products in the cart started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:38.824" level="INFO">${timestamp} = 2023-07-26 00:23:38</msg>
+<status status="PASS" starttime="20230726 00:23:38.824" endtime="20230726 00:23:38.825"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:38.825" level="INFO">2023-07-26 00:23:38 - INFO - Test checking out with products in the cart started</msg>
+<status status="PASS" starttime="20230726 00:23:38.825" endtime="20230726 00:23:38.825"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:38.828" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:38.826" endtime="20230726 00:23:38.828"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:38.826" endtime="20230726 00:23:38.829"/>
+</kw>
+<msg timestamp="20230726 00:23:38.829" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:38.825" endtime="20230726 00:23:38.829"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:38.829" endtime="20230726 00:23:38.829"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:38.823" endtime="20230726 00:23:38.830"/>
+</kw>
+<kw name="Select Product" library="app_keywords">
+<arg>${product_1}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${product_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:23:38.830" endtime="20230726 00:23:38.865"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${product_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:38.865" level="INFO">Clicking element '//div[normalize-space()="Sauce Labs Backpack"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:38.865" endtime="20230726 00:23:38.942"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:38.830" endtime="20230726 00:23:38.942"/>
+</kw>
+<kw name="Add Product To Cart" library="app_keywords">
+<arg>${Add_to_cart_product_1}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${add_to_cart_button_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:23:38.943" endtime="20230726 00:23:38.985"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_to_cart_button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:38.986" level="INFO">Clicking element '//button[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:38.985" endtime="20230726 00:23:39.056"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:38.942" endtime="20230726 00:23:39.056"/>
+</kw>
+<kw name="Go To Cart Page" library="app_keywords">
+<kw name="Set Variable" library="BuiltIn">
+<var>${cart_button_locator}</var>
+<arg>${cart_button_locator}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230726 00:23:39.058" level="INFO">${cart_button_locator} = //a[@class="shopping_cart_link"]</msg>
+<status status="PASS" starttime="20230726 00:23:39.057" endtime="20230726 00:23:39.058"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${cart_button_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:23:39.058" endtime="20230726 00:23:39.092"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${cart_button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:39.093" level="INFO">Clicking element '//a[@class="shopping_cart_link"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:39.092" endtime="20230726 00:23:39.174"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:39.056" endtime="20230726 00:23:39.174"/>
+</kw>
+<kw name="Proceed To Checkout" library="app_keywords">
+<kw name="Set Variable" library="BuiltIn">
+<var>${checkout_button_locator}</var>
+<arg>${checkout_button}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230726 00:23:39.176" level="INFO">${checkout_button_locator} = //button[@id="checkout"]</msg>
+<status status="PASS" starttime="20230726 00:23:39.175" endtime="20230726 00:23:39.176"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${checkout_button_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:23:39.176" endtime="20230726 00:23:39.208"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${checkout_button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:39.209" level="INFO">Clicking element '//button[@id="checkout"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:39.208" endtime="20230726 00:23:39.292"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:39.175" endtime="20230726 00:23:39.292"/>
+</kw>
+<kw name="Fill In Checkout Info" library="app_keywords">
+<arg>Test</arg>
+<arg>User</arg>
+<arg>12345</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${first_name_locator}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:39.294" level="INFO">Typing text 'Test' into text field 'first-name'.</msg>
+<status status="PASS" starttime="20230726 00:23:39.293" endtime="20230726 00:23:39.450"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${last_name_locator}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:39.452" level="INFO">Typing text 'User' into text field 'last-name'.</msg>
+<status status="PASS" starttime="20230726 00:23:39.451" endtime="20230726 00:23:39.590"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${postal_code_locator}</arg>
+<arg>${postal_code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:39.591" level="INFO">Typing text '12345' into text field 'postal-code'.</msg>
+<status status="PASS" starttime="20230726 00:23:39.590" endtime="20230726 00:23:39.716"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:39.292" endtime="20230726 00:23:39.716"/>
+</kw>
+<kw name="Continue Checkout" library="app_keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Continue_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:39.718" level="INFO">Clicking button '//input[@id="continue"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:39.718" endtime="20230726 00:23:39.790"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:39.717" endtime="20230726 00:23:39.790"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${checkout_overview}</arg>
+<arg>Checkout: Overview</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230726 00:23:39.791" level="INFO">Verifying element '//span[@class="title"]' contains exact text 'Checkout: Overview'.</msg>
+<status status="PASS" starttime="20230726 00:23:39.790" endtime="20230726 00:23:39.818"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test checking out with products in the cart finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:39.819" level="INFO">${timestamp} = 2023-07-26 00:23:39</msg>
+<status status="PASS" starttime="20230726 00:23:39.819" endtime="20230726 00:23:39.819"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:39.820" level="INFO">2023-07-26 00:23:39 - INFO - Test checking out with products in the cart finished</msg>
+<status status="PASS" starttime="20230726 00:23:39.819" endtime="20230726 00:23:39.820"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:39.822" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:39.821" endtime="20230726 00:23:39.822"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:39.820" endtime="20230726 00:23:39.823"/>
+</kw>
+<msg timestamp="20230726 00:23:39.823" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:39.820" endtime="20230726 00:23:39.823"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:39.823" endtime="20230726 00:23:39.823"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:39.818" endtime="20230726 00:23:39.823"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:23:39.824" endtime="20230726 00:23:39.825"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:39.824" endtime="20230726 00:23:39.825"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:23:39.825" endtime="20230726 00:23:42.403"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:39.825" endtime="20230726 00:23:42.403"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:39.824" endtime="20230726 00:23:42.403"/>
+</kw>
+<doc>Test checking out with products in the cart (TC104.1).</doc>
+<tag>cart</tag>
+<tag>TC104.1</tag>
+<tag>TS104</tag>
+<status status="PASS" starttime="20230726 00:23:32.344" endtime="20230726 00:23:42.403"/>
+</test>
+<test id="s1-s1-t5" name="Verify user can checkout when the cart is empty" line="60">
+<kw name="Setup Test For Cart" library="app_keywords" type="SETUP">
+<kw name="Open Application" library="app_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:23:42.409" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:23:42.409" endtime="20230726 00:23:49.151"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:23:49.152" endtime="20230726 00:23:49.282"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:42.409" endtime="20230726 00:23:49.282"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${standard_user}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:49.288" level="INFO">Typing text 'standard_user' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:49.286" endtime="20230726 00:23:49.568"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:49.570" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:49.568" endtime="20230726 00:23:49.689"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:49.690" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:49.689" endtime="20230726 00:23:49.835"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:49.283" endtime="20230726 00:23:49.836"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:42.408" endtime="20230726 00:23:49.836"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test checking out with an empty cart started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:49.837" level="INFO">${timestamp} = 2023-07-26 00:23:49</msg>
+<status status="PASS" starttime="20230726 00:23:49.837" endtime="20230726 00:23:49.837"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:49.838" level="INFO">2023-07-26 00:23:49 - INFO - Test checking out with an empty cart started</msg>
+<status status="PASS" starttime="20230726 00:23:49.838" endtime="20230726 00:23:49.838"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:49.842" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:49.839" endtime="20230726 00:23:49.842"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:49.839" endtime="20230726 00:23:49.843"/>
+</kw>
+<msg timestamp="20230726 00:23:49.843" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:49.839" endtime="20230726 00:23:49.843"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:49.843" endtime="20230726 00:23:49.845"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:49.836" endtime="20230726 00:23:49.845"/>
+</kw>
+<kw name="Go To Cart Page" library="app_keywords">
+<kw name="Set Variable" library="BuiltIn">
+<var>${cart_button_locator}</var>
+<arg>${cart_button_locator}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230726 00:23:49.846" level="INFO">${cart_button_locator} = //a[@class="shopping_cart_link"]</msg>
+<status status="PASS" starttime="20230726 00:23:49.846" endtime="20230726 00:23:49.847"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${cart_button_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:23:49.847" endtime="20230726 00:23:49.891"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${cart_button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:49.893" level="INFO">Clicking element '//a[@class="shopping_cart_link"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:49.891" endtime="20230726 00:23:49.980"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:49.845" endtime="20230726 00:23:49.981"/>
+</kw>
+<kw name="Is Checkout Button Enabled" library="app_keywords">
+<var>${checkout_button_enabled}</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${checkout_button_locator}</var>
+<arg>${checkout_button}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230726 00:23:49.982" level="INFO">${checkout_button_locator} = //button[@id="checkout"]</msg>
+<status status="PASS" starttime="20230726 00:23:49.982" endtime="20230726 00:23:49.982"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${checkout_button_enabled}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${checkout_button_locator}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${checkout_button_locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230726 00:23:50.025" level="INFO">Element '//button[@id="checkout"]' is displayed.</msg>
+<status status="PASS" starttime="20230726 00:23:49.983" endtime="20230726 00:23:50.025"/>
+</kw>
+<msg timestamp="20230726 00:23:50.026" level="INFO">${checkout_button_enabled} = True</msg>
+<status status="PASS" starttime="20230726 00:23:49.983" endtime="20230726 00:23:50.026"/>
+</kw>
+<msg timestamp="20230726 00:23:50.026" level="INFO">${checkout_button_enabled} = True</msg>
+<status status="PASS" starttime="20230726 00:23:49.981" endtime="20230726 00:23:50.026"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${checkout_button_enabled}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230726 00:23:50.027" endtime="20230726 00:23:50.027"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test checking out with an empty cart finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:50.028" level="INFO">${timestamp} = 2023-07-26 00:23:50</msg>
+<status status="PASS" starttime="20230726 00:23:50.028" endtime="20230726 00:23:50.028"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:50.029" level="INFO">2023-07-26 00:23:50 - INFO - Test checking out with an empty cart finished</msg>
+<status status="PASS" starttime="20230726 00:23:50.028" endtime="20230726 00:23:50.029"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:50.031" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:50.029" endtime="20230726 00:23:50.031"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:50.029" endtime="20230726 00:23:50.032"/>
+</kw>
+<msg timestamp="20230726 00:23:50.032" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:50.029" endtime="20230726 00:23:50.032"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:50.032" endtime="20230726 00:23:50.032"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:50.027" endtime="20230726 00:23:50.032"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:23:50.034" endtime="20230726 00:23:50.034"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:50.033" endtime="20230726 00:23:50.034"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:23:50.035" endtime="20230726 00:23:52.490"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:50.034" endtime="20230726 00:23:52.491"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:50.033" endtime="20230726 00:23:52.491"/>
+</kw>
+<doc>Test checking out with an empty cart (TC105.1).</doc>
+<tag>cart</tag>
+<tag>TC105.1</tag>
+<tag>TS105</tag>
+<status status="PASS" starttime="20230726 00:23:42.403" endtime="20230726 00:23:52.491"/>
+</test>
+<test id="s1-s1-t6" name="Verify the cart is empty when no products are added" line="69">
+<kw name="Setup Test For Cart" library="app_keywords" type="SETUP">
+<kw name="Open Application" library="app_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:23:52.496" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:23:52.495" endtime="20230726 00:23:58.975"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:23:58.975" endtime="20230726 00:23:59.147"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:52.494" endtime="20230726 00:23:59.147"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${standard_user}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:59.149" level="INFO">Typing text 'standard_user' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:59.148" endtime="20230726 00:23:59.351"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:59.352" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:59.351" endtime="20230726 00:23:59.531"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:59.533" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:59.531" endtime="20230726 00:23:59.699"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:59.147" endtime="20230726 00:23:59.699"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:52.493" endtime="20230726 00:23:59.699"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test checking cart when no products are added started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:59.701" level="INFO">${timestamp} = 2023-07-26 00:23:59</msg>
+<status status="PASS" starttime="20230726 00:23:59.700" endtime="20230726 00:23:59.701"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:59.702" level="INFO">2023-07-26 00:23:59 - INFO - Test checking cart when no products are added started</msg>
+<status status="PASS" starttime="20230726 00:23:59.701" endtime="20230726 00:23:59.702"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:59.722" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:59.703" endtime="20230726 00:23:59.722"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:59.703" endtime="20230726 00:23:59.722"/>
+</kw>
+<msg timestamp="20230726 00:23:59.722" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:59.702" endtime="20230726 00:23:59.722"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:59.723" endtime="20230726 00:23:59.723"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:59.700" endtime="20230726 00:23:59.724"/>
+</kw>
+<kw name="Go To Cart Page" library="app_keywords">
+<kw name="Set Variable" library="BuiltIn">
+<var>${cart_button_locator}</var>
+<arg>${cart_button_locator}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230726 00:23:59.727" level="INFO">${cart_button_locator} = //a[@class="shopping_cart_link"]</msg>
+<status status="PASS" starttime="20230726 00:23:59.725" endtime="20230726 00:23:59.727"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${cart_button_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:23:59.727" endtime="20230726 00:23:59.760"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${cart_button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:59.762" level="INFO">Clicking element '//a[@class="shopping_cart_link"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:59.761" endtime="20230726 00:23:59.812"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:59.724" endtime="20230726 00:23:59.812"/>
+</kw>
+<kw name="Is Product In Cart" library="app_keywords">
+<var>${product_in_cart}</var>
+<arg>${product_1}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${product_in_cart}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${product_locator}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${product_locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230726 00:24:00.110" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230726 00:24:00.110" level="FAIL">Element with locator '//div[normalize-space()="Sauce Labs Backpack"]' not found.</msg>
+<status status="FAIL" starttime="20230726 00:23:59.814" endtime="20230726 00:24:00.113"/>
+</kw>
+<msg timestamp="20230726 00:24:00.113" level="INFO">${product_in_cart} = False</msg>
+<status status="PASS" starttime="20230726 00:23:59.813" endtime="20230726 00:24:00.113"/>
+</kw>
+<msg timestamp="20230726 00:24:00.114" level="INFO">${product_in_cart} = False</msg>
+<status status="PASS" starttime="20230726 00:23:59.812" endtime="20230726 00:24:00.114"/>
+</kw>
+<kw name="Should Not Be True" library="BuiltIn">
+<arg>${product_in_cart}</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="PASS" starttime="20230726 00:24:00.115" endtime="20230726 00:24:00.116"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test checking cart when no products are added finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:24:00.118" level="INFO">${timestamp} = 2023-07-26 00:24:00</msg>
+<status status="PASS" starttime="20230726 00:24:00.117" endtime="20230726 00:24:00.119"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:24:00.124" level="INFO">2023-07-26 00:24:00 - INFO - Test checking cart when no products are added finished</msg>
+<status status="PASS" starttime="20230726 00:24:00.121" endtime="20230726 00:24:00.124"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:24:00.131" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:24:00.126" endtime="20230726 00:24:00.131"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:00.125" endtime="20230726 00:24:00.131"/>
+</kw>
+<msg timestamp="20230726 00:24:00.131" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:24:00.125" endtime="20230726 00:24:00.131"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:24:00.132" endtime="20230726 00:24:00.134"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:00.116" endtime="20230726 00:24:00.135"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:24:00.139" endtime="20230726 00:24:00.139"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:00.137" endtime="20230726 00:24:00.140"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:24:00.142" endtime="20230726 00:24:02.528"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:00.140" endtime="20230726 00:24:02.529"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:00.136" endtime="20230726 00:24:02.529"/>
+</kw>
+<doc>Test checking cart when no products are added (TC106.1).</doc>
+<tag>cart</tag>
+<tag>TC106.1</tag>
+<tag>TS106</tag>
+<status status="PASS" starttime="20230726 00:23:52.492" endtime="20230726 00:24:02.529"/>
+</test>
+<test id="s1-s1-t7" name="Verify the cart retains products when user logs out and logs back in" line="78">
+<kw name="Setup Test For Cart" library="app_keywords" type="SETUP">
+<kw name="Open Application" library="app_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:24:02.532" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:24:02.531" endtime="20230726 00:24:10.639"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:24:10.640" endtime="20230726 00:24:10.806"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:02.530" endtime="20230726 00:24:10.806"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${standard_user}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:10.809" level="INFO">Typing text 'standard_user' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:10.807" endtime="20230726 00:24:11.114"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:11.117" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:11.115" endtime="20230726 00:24:11.338"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:11.339" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:11.338" endtime="20230726 00:24:11.573"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:10.806" endtime="20230726 00:24:11.575"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:02.530" endtime="20230726 00:24:11.575"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test retaining products in cart after logout and login started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:24:11.577" level="INFO">${timestamp} = 2023-07-26 00:24:11</msg>
+<status status="PASS" starttime="20230726 00:24:11.575" endtime="20230726 00:24:11.577"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:24:11.577" level="INFO">2023-07-26 00:24:11 - INFO - Test retaining products in cart after logout and login started</msg>
+<status status="PASS" starttime="20230726 00:24:11.577" endtime="20230726 00:24:11.577"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:24:11.581" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:24:11.577" endtime="20230726 00:24:11.582"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:11.577" endtime="20230726 00:24:11.582"/>
+</kw>
+<msg timestamp="20230726 00:24:11.582" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:24:11.577" endtime="20230726 00:24:11.584"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:24:11.584" endtime="20230726 00:24:11.585"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:11.575" endtime="20230726 00:24:11.586"/>
+</kw>
+<kw name="Add Product To Cart" library="app_keywords">
+<arg>${Add_to_cart_product_1}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${add_to_cart_button_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:24:11.588" endtime="20230726 00:24:11.650"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_to_cart_button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:11.651" level="INFO">Clicking element '//button[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:11.650" endtime="20230726 00:24:11.739"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:11.587" endtime="20230726 00:24:11.739"/>
+</kw>
+<kw name="Logout From Application" library="app_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${open_menu_button_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:24:11.740" endtime="20230726 00:24:11.798"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${open_menu_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:11.800" level="INFO">Clicking button '//button[@id="react-burger-menu-btn"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:11.799" endtime="20230726 00:24:11.888"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${logout_link_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:24:11.889" endtime="20230726 00:24:12.204"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${logout_link_locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:12.205" level="INFO">Clicking link '//a[@id="logout_sidebar_link"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:12.204" endtime="20230726 00:24:12.314"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:11.739" endtime="20230726 00:24:12.315"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${standard_user}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:12.319" level="INFO">Typing text 'standard_user' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:12.317" endtime="20230726 00:24:12.552"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:12.553" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:12.552" endtime="20230726 00:24:12.678"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:12.679" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:12.678" endtime="20230726 00:24:12.743"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:12.315" endtime="20230726 00:24:12.743"/>
+</kw>
+<kw name="Go To Cart Page" library="app_keywords">
+<kw name="Set Variable" library="BuiltIn">
+<var>${cart_button_locator}</var>
+<arg>${cart_button_locator}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230726 00:24:12.745" level="INFO">${cart_button_locator} = //a[@class="shopping_cart_link"]</msg>
+<status status="PASS" starttime="20230726 00:24:12.744" endtime="20230726 00:24:12.745"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${cart_button_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:24:12.745" endtime="20230726 00:24:12.772"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${cart_button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:12.773" level="INFO">Clicking element '//a[@class="shopping_cart_link"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:12.772" endtime="20230726 00:24:12.834"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:12.744" endtime="20230726 00:24:12.835"/>
+</kw>
+<kw name="Get Cart Count" library="app_keywords">
+<var>${cart_count}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${cart_count}</var>
+<arg>${cart_count_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:12.879" level="INFO">${cart_count} = 1</msg>
+<status status="PASS" starttime="20230726 00:24:12.836" endtime="20230726 00:24:12.879"/>
+</kw>
+<msg timestamp="20230726 00:24:12.879" level="INFO">${cart_count} = 1</msg>
+<status status="PASS" starttime="20230726 00:24:12.835" endtime="20230726 00:24:12.879"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${cart_count}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" starttime="20230726 00:24:12.880" endtime="20230726 00:24:12.880"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test retaining products in cart after logout and login finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:24:12.881" level="INFO">${timestamp} = 2023-07-26 00:24:12</msg>
+<status status="PASS" starttime="20230726 00:24:12.881" endtime="20230726 00:24:12.882"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:24:12.882" level="INFO">2023-07-26 00:24:12 - INFO - Test retaining products in cart after logout and login finished</msg>
+<status status="PASS" starttime="20230726 00:24:12.882" endtime="20230726 00:24:12.883"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:24:12.975" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:24:12.884" endtime="20230726 00:24:12.975"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:12.884" endtime="20230726 00:24:12.975"/>
+</kw>
+<msg timestamp="20230726 00:24:12.976" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:24:12.883" endtime="20230726 00:24:12.976"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:24:12.976" endtime="20230726 00:24:12.978"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:12.880" endtime="20230726 00:24:12.978"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:24:12.981" endtime="20230726 00:24:12.982"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:12.980" endtime="20230726 00:24:12.982"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:24:12.984" endtime="20230726 00:24:15.296"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:12.983" endtime="20230726 00:24:15.296"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:12.979" endtime="20230726 00:24:15.296"/>
+</kw>
+<doc>Test retaining products in cart after logout and login (TC107.1).</doc>
+<tag>cart</tag>
+<tag>TC107.1</tag>
+<tag>TS107</tag>
+<status status="PASS" starttime="20230726 00:24:02.529" endtime="20230726 00:24:15.296"/>
+</test>
+<test id="s1-s1-t8" name="Verify user can continue shopping from the cart" line="90">
+<kw name="Setup Test For Cart" library="app_keywords" type="SETUP">
+<kw name="Open Application" library="app_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:24:15.298" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:24:15.297" endtime="20230726 00:24:20.779"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:24:20.780" endtime="20230726 00:24:20.959"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:15.297" endtime="20230726 00:24:20.960"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${standard_user}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:20.963" level="INFO">Typing text 'standard_user' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:20.961" endtime="20230726 00:24:21.187"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:21.188" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:21.187" endtime="20230726 00:24:21.332"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:21.334" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:21.333" endtime="20230726 00:24:21.518"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:20.961" endtime="20230726 00:24:21.519"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:15.297" endtime="20230726 00:24:21.519"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test continuing shopping from the cart started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:24:21.520" level="INFO">${timestamp} = 2023-07-26 00:24:21</msg>
+<status status="PASS" starttime="20230726 00:24:21.520" endtime="20230726 00:24:21.520"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:24:21.521" level="INFO">2023-07-26 00:24:21 - INFO - Test continuing shopping from the cart started</msg>
+<status status="PASS" starttime="20230726 00:24:21.520" endtime="20230726 00:24:21.521"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:24:21.523" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:24:21.522" endtime="20230726 00:24:21.523"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:21.521" endtime="20230726 00:24:21.523"/>
+</kw>
+<msg timestamp="20230726 00:24:21.523" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:24:21.521" endtime="20230726 00:24:21.523"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:24:21.523" endtime="20230726 00:24:21.524"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:21.519" endtime="20230726 00:24:21.524"/>
+</kw>
+<kw name="Go To Cart Page" library="app_keywords">
+<kw name="Set Variable" library="BuiltIn">
+<var>${cart_button_locator}</var>
+<arg>${cart_button_locator}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230726 00:24:21.525" level="INFO">${cart_button_locator} = //a[@class="shopping_cart_link"]</msg>
+<status status="PASS" starttime="20230726 00:24:21.524" endtime="20230726 00:24:21.525"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${cart_button_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 00:24:21.525" endtime="20230726 00:24:21.553"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${cart_button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:21.554" level="INFO">Clicking element '//a[@class="shopping_cart_link"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:21.554" endtime="20230726 00:24:21.609"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:21.524" endtime="20230726 00:24:21.609"/>
+</kw>
+<kw name="Continue Shopping" library="app_keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${continue_shopping_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:21.610" level="INFO">Clicking button 'continue-shopping'.</msg>
+<status status="PASS" starttime="20230726 00:24:21.609" endtime="20230726 00:24:21.705"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:21.609" endtime="20230726 00:24:21.705"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${logout_link_locator}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230726 00:24:21.706" endtime="20230726 00:24:21.722"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test continuing shopping from the cart finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:24:21.723" level="INFO">${timestamp} = 2023-07-26 00:24:21</msg>
+<status status="PASS" starttime="20230726 00:24:21.723" endtime="20230726 00:24:21.723"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:24:21.724" level="INFO">2023-07-26 00:24:21 - INFO - Test continuing shopping from the cart finished</msg>
+<status status="PASS" starttime="20230726 00:24:21.723" endtime="20230726 00:24:21.724"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:24:21.726" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:24:21.725" endtime="20230726 00:24:21.726"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:21.724" endtime="20230726 00:24:21.726"/>
+</kw>
+<msg timestamp="20230726 00:24:21.726" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:24:21.724" endtime="20230726 00:24:21.726"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:24:21.727" endtime="20230726 00:24:21.727"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:21.722" endtime="20230726 00:24:21.727"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:24:21.728" endtime="20230726 00:24:21.728"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:21.727" endtime="20230726 00:24:21.728"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:24:21.729" endtime="20230726 00:24:24.320"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:21.728" endtime="20230726 00:24:24.320"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:21.727" endtime="20230726 00:24:24.320"/>
+</kw>
+<doc>Test continuing shopping from the cart (TC108.1).</doc>
+<tag>cart</tag>
+<tag>TC108.1</tag>
+<tag>TS108</tag>
+<status status="PASS" starttime="20230726 00:24:15.296" endtime="20230726 00:24:24.321"/>
+</test>
+<doc>A test suite with tests for cart functionality.</doc>
+<status status="PASS" starttime="20230726 00:23:03.993" endtime="20230726 00:24:24.321"/>
+</suite>
+<status status="PASS" starttime="20230726 00:23:03.979" endtime="20230726 00:24:24.324"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="8" fail="0" skip="0">cart</stat>
+<stat pass="1" fail="0" skip="0">TC101.1</stat>
+<stat pass="1" fail="0" skip="0">TC102.1</stat>
+<stat pass="1" fail="0" skip="0">TC103.1</stat>
+<stat pass="1" fail="0" skip="0">TC104.1</stat>
+<stat pass="1" fail="0" skip="0">TC105.1</stat>
+<stat pass="1" fail="0" skip="0">TC106.1</stat>
+<stat pass="1" fail="0" skip="0">TC107.1</stat>
+<stat pass="1" fail="0" skip="0">TC108.1</stat>
+<stat pass="1" fail="0" skip="0">TS101</stat>
+<stat pass="1" fail="0" skip="0">TS102</stat>
+<stat pass="1" fail="0" skip="0">TS103</stat>
+<stat pass="1" fail="0" skip="0">TS104</stat>
+<stat pass="1" fail="0" skip="0">TS105</stat>
+<stat pass="1" fail="0" skip="0">TS106</stat>
+<stat pass="1" fail="0" skip="0">TS107</stat>
+<stat pass="1" fail="0" skip="0">TS108</stat>
+</tag>
+<suite>
+<stat pass="8" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="8" fail="0" skip="0" id="s1-s1" name="Cart Tests">Tests.Cart Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

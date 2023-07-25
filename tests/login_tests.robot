@@ -97,10 +97,8 @@ Login Session Timeout
     [Tags]    login_session    TS009    TC001.11
     Log Message     Test login session timeout after a period of inactivity started
     Login    ${standard_user}    ${password}
-    Sleep    ${SESSION_TIMEOUT} minutes    # Waiting for the session to timeout
+    Sleep    ${SESSION_TIMEOUT} minutes
     Reload Page    # Reloading the page to trigger the session timeout
-    # After the session timeout, the user should be logged out.
-    # This can be verified by checking for a login page element.
     Wait Until Page Contains Element    ${LOGIN_BUTTON_LOCATOR}    10
     Log Message     Test login session timeout after a period of inactivity finished
 

@@ -1,0 +1,4 @@
+Second signal will force exit.
+[ WARN ] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))': /session/a58451cc723a265446338110a83ade5a/screenshot
+Execution forcefully stopped.
+[ ERROR ] Execution stopped by user.

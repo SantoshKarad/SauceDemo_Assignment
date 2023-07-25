@@ -1,0 +1,35 @@
+==============================================================================
+Tests                                                                         
+==============================================================================
+Tests.Login Tests :: A test suite with tests for login functionality.         
+==============================================================================
+Successful Login with Valid Credentials :: Test successful login w... | PASS |
+------------------------------------------------------------------------------
+Successful Login with Problem User :: Test successful login with p... | PASS |
+------------------------------------------------------------------------------
+Successful Login with Performance Glitch User :: Test successful l... | PASS |
+------------------------------------------------------------------------------
+Unsuccessful Login with Invalid Username :: Test unsuccessful logi... | PASS |
+------------------------------------------------------------------------------
+Unsuccessful Login with Invalid Password :: Test unsuccessful logi... | PASS |
+------------------------------------------------------------------------------
+Unsuccessful Login with Empty Username :: Test unsuccessful login ... | PASS |
+------------------------------------------------------------------------------
+Unsuccessful Login with Empty Password :: Test unsuccessful login ... | PASS |
+------------------------------------------------------------------------------
+Unsuccessful Login with Locked User :: Test unsuccessful login wit... | PASS |
+------------------------------------------------------------------------------
+Unsuccessful Login with Case Insensitive Username :: Test unsucces... | PASS |
+------------------------------------------------------------------------------
+Login Resilient to SQL Injection Attacks :: Test login feature is ... | PASS |
+------------------------------------------------------------------------------
+Login Session Timeout :: Test login session timeout after a period...   
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\Admin\PycharmProjects\SauceDemoAssignment\tests\login_tests.robot:95
+    T:  Login Session Timeout    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\Admin\PycharmProjects\SauceDemoAssignment\tests\login_tests.robot:100
+      Sleep    ${SESSION_TIMEOUT} minutes
+      |  ${SESSION_TIMEOUT} minutes = 10 minutes (str)
+______________________________________________________________________________
