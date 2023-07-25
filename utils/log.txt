@@ -1,0 +1,37 @@
+2023-07-25 18:13:41 - INFO - Test adding a product to the cart started
+2023-07-25 18:13:41 - INFO - Test adding a product to the cart finished
+2023-07-25 18:13:50 - INFO - Test removing a product from the cart started
+2023-07-25 18:13:51 - INFO - Test removing a product from the cart finished
+2023-07-25 18:13:59 - INFO - Test updating cart count when a product is added started
+2023-07-25 18:14:00 - INFO - Test updating cart count when a product is added finished
+2023-07-25 18:14:07 - INFO - Test checking out with products in the cart started
+2023-07-25 18:14:10 - INFO - Test checking out with products in the cart finished
+2023-07-25 18:14:18 - INFO - Test checking out with an empty cart started
+2023-07-25 18:14:18 - INFO - Test checking out with an empty cart finished
+2023-07-25 18:14:26 - INFO - Test checking cart when no products are added started
+2023-07-25 18:14:27 - INFO - Test checking cart when no products are added finished
+2023-07-25 18:14:36 - INFO - Test retaining products in cart after logout and login started
+2023-07-25 18:14:38 - INFO - Test retaining products in cart after logout and login finished
+2023-07-25 18:14:46 - INFO - Test continuing shopping from the cart started
+2023-07-25 18:14:47 - INFO - Test continuing shopping from the cart finished
+2023-07-25 18:16:57 - INFO - Test successful login with valid credentials started
+2023-07-25 18:16:58 - INFO - Test successful login with valid credentials finished
+2023-07-25 18:17:05 - INFO - Test successful login with problem user started
+2023-07-25 18:17:06 - INFO - Test successful login with problem user finished
+2023-07-25 18:17:14 - INFO - Test successful login with performance glitch user started
+2023-07-25 18:17:20 - INFO - Test successful login with performance glitch user finished
+2023-07-25 18:17:30 - INFO - Test unsuccessful login with invalid username started
+2023-07-25 18:17:30 - INFO - Test unsuccessful login with invalid username finished
+2023-07-25 18:17:38 - INFO - Test unsuccessful login with invalid password started
+2023-07-25 18:17:39 - INFO - Test unsuccessful login with invalid password finished
+2023-07-25 18:17:45 - INFO - Test unsuccessful login with empty username started
+2023-07-25 18:17:46 - INFO - Test unsuccessful login with empty username finished
+2023-07-25 18:17:54 - INFO - Test unsuccessful login with empty password started
+2023-07-25 18:17:54 - INFO - Test unsuccessful login with empty password finished
+2023-07-25 18:18:01 - INFO - Test unsuccessful login with locked user started
+2023-07-25 18:18:02 - INFO - Test unsuccessful login with locked user finished
+2023-07-25 18:18:09 - INFO - Test unsuccessful login with case insensitive username started
+2023-07-25 18:18:10 - INFO - Test unsuccessful login with case insensitive username finished
+2023-07-25 18:18:16 - INFO - Test login feature is resilient to SQL Injection attacks started
+2023-07-25 18:18:17 - INFO - Test login feature is resilient to SQL Injection attacks finished
+2023-07-25 18:18:25 - INFO - Test login session timeout after a period of inactivity started
