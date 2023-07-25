@@ -1,0 +1,11 @@
+# Write the dependencies to the requirements.txt file
+
+requirements = """
+selenium
+robotframework-seleniumlibrary
+robotframework
+robotframework-pabot
+"""
+
+with open("C:\\Users\\Admin\\PycharmProjects\\SauceDemoAssignment\\requirements.txt", "w") as file:
+    file.write(requirements)

@@ -1,0 +1,2253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230726 00:23:03.962" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="C:\Users\Admin\PycharmProjects\SauceDemoAssignment\tests">
+<suite id="s1-s1" name="Login Tests" source="C:\Users\Admin\PycharmProjects\SauceDemoAssignment\tests\login_tests.robot">
+<test id="s1-s1-t1" name="Successful Login with Valid Credentials" line="14">
+<kw name="Open Application" library="app_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:23:04.187" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:23:04.187" endtime="20230726 00:23:09.533"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:23:09.533" endtime="20230726 00:23:09.658"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:04.186" endtime="20230726 00:23:09.658"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test successful login with valid credentials started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:09.663" level="INFO">${timestamp} = 2023-07-26 00:23:09</msg>
+<status status="PASS" starttime="20230726 00:23:09.662" endtime="20230726 00:23:09.663"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:09.665" level="INFO">2023-07-26 00:23:09 - INFO - Test successful login with valid credentials started</msg>
+<status status="PASS" starttime="20230726 00:23:09.664" endtime="20230726 00:23:09.665"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:09.675" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:09.669" endtime="20230726 00:23:09.675"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:09.668" endtime="20230726 00:23:09.676"/>
+</kw>
+<msg timestamp="20230726 00:23:09.676" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:09.666" endtime="20230726 00:23:09.676"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:09.677" endtime="20230726 00:23:09.678"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:09.659" endtime="20230726 00:23:09.679"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${standard_user}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:09.683" level="INFO">Typing text 'standard_user' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:09.681" endtime="20230726 00:23:09.858"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:09.859" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:09.859" endtime="20230726 00:23:09.984"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:09.985" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:09.984" endtime="20230726 00:23:10.135"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:09.679" endtime="20230726 00:23:10.135"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${logout_link_locator}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230726 00:23:10.135" endtime="20230726 00:23:10.172"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test successful login with valid credentials finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:10.174" level="INFO">${timestamp} = 2023-07-26 00:23:10</msg>
+<status status="PASS" starttime="20230726 00:23:10.173" endtime="20230726 00:23:10.174"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:10.175" level="INFO">2023-07-26 00:23:10 - INFO - Test successful login with valid credentials finished</msg>
+<status status="PASS" starttime="20230726 00:23:10.174" endtime="20230726 00:23:10.175"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:10.183" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:10.180" endtime="20230726 00:23:10.183"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:10.178" endtime="20230726 00:23:10.184"/>
+</kw>
+<msg timestamp="20230726 00:23:10.184" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:10.176" endtime="20230726 00:23:10.184"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:10.184" endtime="20230726 00:23:10.185"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:10.172" endtime="20230726 00:23:10.185"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:23:10.186" endtime="20230726 00:23:10.186"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:10.185" endtime="20230726 00:23:10.186"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:23:10.186" endtime="20230726 00:23:12.713"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:10.186" endtime="20230726 00:23:12.713"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:10.185" endtime="20230726 00:23:12.714"/>
+</kw>
+<doc>Test successful login with valid credentials (TC001.1).</doc>
+<tag>login_valid</tag>
+<tag>TC001.1</tag>
+<tag>TS001</tag>
+<status status="PASS" starttime="20230726 00:23:04.186" endtime="20230726 00:23:12.714"/>
+</test>
+<test id="s1-s1-t2" name="Successful Login with Problem User" line="22">
+<kw name="Open Application" library="app_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:23:12.714" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:23:12.714" endtime="20230726 00:23:18.339"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:23:18.339" endtime="20230726 00:23:18.457"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:12.714" endtime="20230726 00:23:18.457"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test successful login with problem user started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:18.458" level="INFO">${timestamp} = 2023-07-26 00:23:18</msg>
+<status status="PASS" starttime="20230726 00:23:18.458" endtime="20230726 00:23:18.458"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:18.459" level="INFO">2023-07-26 00:23:18 - INFO - Test successful login with problem user started</msg>
+<status status="PASS" starttime="20230726 00:23:18.458" endtime="20230726 00:23:18.459"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:18.460" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:18.459" endtime="20230726 00:23:18.460"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:18.459" endtime="20230726 00:23:18.460"/>
+</kw>
+<msg timestamp="20230726 00:23:18.460" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:18.459" endtime="20230726 00:23:18.460"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:18.460" endtime="20230726 00:23:18.462"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:18.457" endtime="20230726 00:23:18.462"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${problem_user}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:18.462" level="INFO">Typing text 'problem_user' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:18.462" endtime="20230726 00:23:18.590"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:18.591" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:18.590" endtime="20230726 00:23:18.686"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:18.688" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:18.687" endtime="20230726 00:23:18.777"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:18.462" endtime="20230726 00:23:18.777"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${logout_link_locator}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230726 00:23:18.777" endtime="20230726 00:23:18.792"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test successful login with problem user finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:18.794" level="INFO">${timestamp} = 2023-07-26 00:23:18</msg>
+<status status="PASS" starttime="20230726 00:23:18.794" endtime="20230726 00:23:18.794"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:18.794" level="INFO">2023-07-26 00:23:18 - INFO - Test successful login with problem user finished</msg>
+<status status="PASS" starttime="20230726 00:23:18.794" endtime="20230726 00:23:18.794"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:18.797" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:18.795" endtime="20230726 00:23:18.797"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:18.795" endtime="20230726 00:23:18.797"/>
+</kw>
+<msg timestamp="20230726 00:23:18.797" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:18.794" endtime="20230726 00:23:18.798"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:18.798" endtime="20230726 00:23:18.798"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:18.793" endtime="20230726 00:23:18.798"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:23:18.799" endtime="20230726 00:23:18.800"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:18.799" endtime="20230726 00:23:18.800"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:23:18.800" endtime="20230726 00:23:21.506"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:18.800" endtime="20230726 00:23:21.506"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:18.798" endtime="20230726 00:23:21.507"/>
+</kw>
+<doc>Test successful login with problem user (TC001.2).</doc>
+<tag>login_valid</tag>
+<tag>TC001.2</tag>
+<tag>TS001</tag>
+<status status="PASS" starttime="20230726 00:23:12.714" endtime="20230726 00:23:21.507"/>
+</test>
+<test id="s1-s1-t3" name="Successful Login with Performance Glitch User" line="30">
+<kw name="Open Application" library="app_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:23:21.509" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:23:21.509" endtime="20230726 00:23:26.187"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:23:26.187" endtime="20230726 00:23:26.487"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:21.508" endtime="20230726 00:23:26.488"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test successful login with performance glitch user started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:26.491" level="INFO">${timestamp} = 2023-07-26 00:23:26</msg>
+<status status="PASS" starttime="20230726 00:23:26.490" endtime="20230726 00:23:26.491"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:26.492" level="INFO">2023-07-26 00:23:26 - INFO - Test successful login with performance glitch user started</msg>
+<status status="PASS" starttime="20230726 00:23:26.492" endtime="20230726 00:23:26.492"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:26.502" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:26.495" endtime="20230726 00:23:26.502"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:26.493" endtime="20230726 00:23:26.503"/>
+</kw>
+<msg timestamp="20230726 00:23:26.503" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:26.493" endtime="20230726 00:23:26.504"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:26.504" endtime="20230726 00:23:26.506"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:26.488" endtime="20230726 00:23:26.506"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${performance_glitch_user}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:26.509" level="INFO">Typing text 'performance_glitch_user' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:26.508" endtime="20230726 00:23:26.786"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:26.787" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:26.786" endtime="20230726 00:23:26.911"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:26.912" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:26.911" endtime="20230726 00:23:32.003"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:26.507" endtime="20230726 00:23:32.004"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${logout_link_locator}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230726 00:23:32.004" endtime="20230726 00:23:32.016"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test successful login with performance glitch user finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:32.017" level="INFO">${timestamp} = 2023-07-26 00:23:32</msg>
+<status status="PASS" starttime="20230726 00:23:32.017" endtime="20230726 00:23:32.017"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:32.018" level="INFO">2023-07-26 00:23:32 - INFO - Test successful login with performance glitch user finished</msg>
+<status status="PASS" starttime="20230726 00:23:32.017" endtime="20230726 00:23:32.018"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:32.021" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:32.019" endtime="20230726 00:23:32.021"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:32.019" endtime="20230726 00:23:32.021"/>
+</kw>
+<msg timestamp="20230726 00:23:32.022" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:32.018" endtime="20230726 00:23:32.022"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:32.022" endtime="20230726 00:23:32.023"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:32.016" endtime="20230726 00:23:32.023"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:23:32.024" endtime="20230726 00:23:32.024"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:32.023" endtime="20230726 00:23:32.024"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:23:32.025" endtime="20230726 00:23:34.243"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:32.024" endtime="20230726 00:23:34.243"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:32.023" endtime="20230726 00:23:34.244"/>
+</kw>
+<doc>Test successful login with performance glitch user (TC001.3).</doc>
+<tag>login_valid</tag>
+<tag>TC001.3</tag>
+<tag>TS001</tag>
+<status status="PASS" starttime="20230726 00:23:21.507" endtime="20230726 00:23:34.244"/>
+</test>
+<test id="s1-s1-t4" name="Unsuccessful Login with Invalid Username" line="38">
+<kw name="Open Application" library="app_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:23:34.248" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:23:34.248" endtime="20230726 00:23:40.229"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:23:40.229" endtime="20230726 00:23:40.354"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:34.244" endtime="20230726 00:23:40.355"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test unsuccessful login with invalid username started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:40.355" level="INFO">${timestamp} = 2023-07-26 00:23:40</msg>
+<status status="PASS" starttime="20230726 00:23:40.355" endtime="20230726 00:23:40.355"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:40.360" level="INFO">2023-07-26 00:23:40 - INFO - Test unsuccessful login with invalid username started</msg>
+<status status="PASS" starttime="20230726 00:23:40.355" endtime="20230726 00:23:40.360"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:40.370" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:40.360" endtime="20230726 00:23:40.370"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:40.360" endtime="20230726 00:23:40.371"/>
+</kw>
+<msg timestamp="20230726 00:23:40.371" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:40.360" endtime="20230726 00:23:40.371"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:40.372" endtime="20230726 00:23:40.373"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:40.355" endtime="20230726 00:23:40.374"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>invalid_username</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:40.378" level="INFO">Typing text 'invalid_username' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:40.376" endtime="20230726 00:23:40.530"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:40.530" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:40.530" endtime="20230726 00:23:40.618"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:40.619" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:40.618" endtime="20230726 00:23:40.678"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:40.374" endtime="20230726 00:23:40.678"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Epic sadface: Username and password do not match any user in this service</arg>
+<arg>10</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230726 00:23:40.678" endtime="20230726 00:23:40.691"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test unsuccessful login with invalid username finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:40.692" level="INFO">${timestamp} = 2023-07-26 00:23:40</msg>
+<status status="PASS" starttime="20230726 00:23:40.692" endtime="20230726 00:23:40.692"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:40.692" level="INFO">2023-07-26 00:23:40 - INFO - Test unsuccessful login with invalid username finished</msg>
+<status status="PASS" starttime="20230726 00:23:40.692" endtime="20230726 00:23:40.692"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:40.692" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:40.692" endtime="20230726 00:23:40.694"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:40.692" endtime="20230726 00:23:40.694"/>
+</kw>
+<msg timestamp="20230726 00:23:40.694" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:40.692" endtime="20230726 00:23:40.694"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:40.694" endtime="20230726 00:23:40.694"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:40.691" endtime="20230726 00:23:40.694"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:23:40.695" endtime="20230726 00:23:40.695"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:40.695" endtime="20230726 00:23:40.695"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:23:40.695" endtime="20230726 00:23:42.922"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:40.695" endtime="20230726 00:23:42.923"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:40.694" endtime="20230726 00:23:42.923"/>
+</kw>
+<doc>Test unsuccessful login with invalid username (TC001.4).</doc>
+<tag>login_invalid</tag>
+<tag>TC001.4</tag>
+<tag>TS002</tag>
+<status status="PASS" starttime="20230726 00:23:34.244" endtime="20230726 00:23:42.923"/>
+</test>
+<test id="s1-s1-t5" name="Unsuccessful Login with Invalid Password" line="46">
+<kw name="Open Application" library="app_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:23:42.923" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:23:42.923" endtime="20230726 00:23:50.208"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:23:50.209" endtime="20230726 00:23:50.333"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:42.923" endtime="20230726 00:23:50.333"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test unsuccessful login with invalid password started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:50.335" level="INFO">${timestamp} = 2023-07-26 00:23:50</msg>
+<status status="PASS" starttime="20230726 00:23:50.334" endtime="20230726 00:23:50.335"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:50.336" level="INFO">2023-07-26 00:23:50 - INFO - Test unsuccessful login with invalid password started</msg>
+<status status="PASS" starttime="20230726 00:23:50.336" endtime="20230726 00:23:50.337"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:50.341" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:50.339" endtime="20230726 00:23:50.341"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:50.338" endtime="20230726 00:23:50.342"/>
+</kw>
+<msg timestamp="20230726 00:23:50.343" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:50.337" endtime="20230726 00:23:50.343"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:50.344" endtime="20230726 00:23:50.346"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:50.334" endtime="20230726 00:23:50.346"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${standard_user}</arg>
+<arg>invalid_password</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:50.348" level="INFO">Typing text 'standard_user' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:50.347" endtime="20230726 00:23:50.507"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:50.508" level="INFO">Typing text 'invalid_password' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:50.507" endtime="20230726 00:23:50.592"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:50.592" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:50.592" endtime="20230726 00:23:50.650"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:50.346" endtime="20230726 00:23:50.650"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Epic sadface: Username and password do not match any user in this service</arg>
+<arg>10</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230726 00:23:50.650" endtime="20230726 00:23:50.664"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test unsuccessful login with invalid password finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:50.665" level="INFO">${timestamp} = 2023-07-26 00:23:50</msg>
+<status status="PASS" starttime="20230726 00:23:50.665" endtime="20230726 00:23:50.665"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:50.665" level="INFO">2023-07-26 00:23:50 - INFO - Test unsuccessful login with invalid password finished</msg>
+<status status="PASS" starttime="20230726 00:23:50.665" endtime="20230726 00:23:50.665"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:50.668" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:50.667" endtime="20230726 00:23:50.669"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:50.666" endtime="20230726 00:23:50.669"/>
+</kw>
+<msg timestamp="20230726 00:23:50.669" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:50.666" endtime="20230726 00:23:50.669"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:50.669" endtime="20230726 00:23:50.669"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:50.664" endtime="20230726 00:23:50.669"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:23:50.669" endtime="20230726 00:23:50.669"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:50.669" endtime="20230726 00:23:50.669"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:23:50.669" endtime="20230726 00:23:53.284"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:50.669" endtime="20230726 00:23:53.285"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:50.669" endtime="20230726 00:23:53.285"/>
+</kw>
+<doc>Test unsuccessful login with invalid password (TC001.5).</doc>
+<tag>login_invalid</tag>
+<tag>TC001.5</tag>
+<tag>TS003</tag>
+<status status="PASS" starttime="20230726 00:23:42.923" endtime="20230726 00:23:53.286"/>
+</test>
+<test id="s1-s1-t6" name="Unsuccessful Login with Empty Username" line="54">
+<kw name="Open Application" library="app_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:23:53.292" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:23:53.290" endtime="20230726 00:23:59.383"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:23:59.384" endtime="20230726 00:23:59.508"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:53.289" endtime="20230726 00:23:59.508"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test unsuccessful login with empty username started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:59.509" level="INFO">${timestamp} = 2023-07-26 00:23:59</msg>
+<status status="PASS" starttime="20230726 00:23:59.509" endtime="20230726 00:23:59.509"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:59.510" level="INFO">2023-07-26 00:23:59 - INFO - Test unsuccessful login with empty username started</msg>
+<status status="PASS" starttime="20230726 00:23:59.510" endtime="20230726 00:23:59.510"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:59.514" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:59.512" endtime="20230726 00:23:59.514"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:59.511" endtime="20230726 00:23:59.514"/>
+</kw>
+<msg timestamp="20230726 00:23:59.514" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:59.511" endtime="20230726 00:23:59.515"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:59.515" endtime="20230726 00:23:59.515"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:59.508" endtime="20230726 00:23:59.516"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${EMPTY}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:59.523" level="INFO">Typing text '' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:59.520" endtime="20230726 00:23:59.698"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:59.700" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:59.698" endtime="20230726 00:23:59.817"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:23:59.818" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:23:59.817" endtime="20230726 00:23:59.928"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:59.516" endtime="20230726 00:23:59.928"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Epic sadface: Username is required</arg>
+<arg>10</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230726 00:23:59.928" endtime="20230726 00:23:59.952"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test unsuccessful login with empty username finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:23:59.957" level="INFO">${timestamp} = 2023-07-26 00:23:59</msg>
+<status status="PASS" starttime="20230726 00:23:59.956" endtime="20230726 00:23:59.957"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:23:59.958" level="INFO">2023-07-26 00:23:59 - INFO - Test unsuccessful login with empty username finished</msg>
+<status status="PASS" starttime="20230726 00:23:59.957" endtime="20230726 00:23:59.958"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:23:59.961" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:23:59.959" endtime="20230726 00:23:59.961"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:59.958" endtime="20230726 00:23:59.961"/>
+</kw>
+<msg timestamp="20230726 00:23:59.961" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:23:59.958" endtime="20230726 00:23:59.961"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:23:59.961" endtime="20230726 00:23:59.962"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:59.953" endtime="20230726 00:23:59.962"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:23:59.963" endtime="20230726 00:23:59.963"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:59.962" endtime="20230726 00:23:59.963"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:23:59.964" endtime="20230726 00:24:02.498"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:59.963" endtime="20230726 00:24:02.498"/>
+</kw>
+<status status="PASS" starttime="20230726 00:23:59.962" endtime="20230726 00:24:02.498"/>
+</kw>
+<doc>Test unsuccessful login with empty username (TC001.6).</doc>
+<tag>login_invalid</tag>
+<tag>TC001.6</tag>
+<tag>TS004</tag>
+<status status="PASS" starttime="20230726 00:23:53.287" endtime="20230726 00:24:02.498"/>
+</test>
+<test id="s1-s1-t7" name="Unsuccessful Login with Empty Password" line="62">
+<kw name="Open Application" library="app_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:24:02.500" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:24:02.500" endtime="20230726 00:24:10.663"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:24:10.664" endtime="20230726 00:24:10.821"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:02.499" endtime="20230726 00:24:10.821"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test unsuccessful login with empty password started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:24:10.824" level="INFO">${timestamp} = 2023-07-26 00:24:10</msg>
+<status status="PASS" starttime="20230726 00:24:10.823" endtime="20230726 00:24:10.824"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:24:10.825" level="INFO">2023-07-26 00:24:10 - INFO - Test unsuccessful login with empty password started</msg>
+<status status="PASS" starttime="20230726 00:24:10.825" endtime="20230726 00:24:10.826"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:24:10.832" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:24:10.830" endtime="20230726 00:24:10.832"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:10.828" endtime="20230726 00:24:10.833"/>
+</kw>
+<msg timestamp="20230726 00:24:10.833" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:24:10.826" endtime="20230726 00:24:10.833"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:24:10.834" endtime="20230726 00:24:10.835"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:10.822" endtime="20230726 00:24:10.835"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${standard_user}</arg>
+<arg>${EMPTY}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:10.840" level="INFO">Typing text 'standard_user' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:10.838" endtime="20230726 00:24:11.165"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:11.167" level="INFO">Typing text '' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:11.166" endtime="20230726 00:24:11.350"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:11.352" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:11.351" endtime="20230726 00:24:11.513"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:10.835" endtime="20230726 00:24:11.513"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Epic sadface: Password is required</arg>
+<arg>10</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230726 00:24:11.514" endtime="20230726 00:24:11.548"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test unsuccessful login with empty password finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:24:11.550" level="INFO">${timestamp} = 2023-07-26 00:24:11</msg>
+<status status="PASS" starttime="20230726 00:24:11.549" endtime="20230726 00:24:11.550"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:24:11.551" level="INFO">2023-07-26 00:24:11 - INFO - Test unsuccessful login with empty password finished</msg>
+<status status="PASS" starttime="20230726 00:24:11.550" endtime="20230726 00:24:11.551"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:24:11.554" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:24:11.552" endtime="20230726 00:24:11.555"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:11.551" endtime="20230726 00:24:11.555"/>
+</kw>
+<msg timestamp="20230726 00:24:11.555" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:24:11.551" endtime="20230726 00:24:11.555"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:24:11.555" endtime="20230726 00:24:11.556"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:11.548" endtime="20230726 00:24:11.556"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:24:11.558" endtime="20230726 00:24:11.559"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:11.557" endtime="20230726 00:24:11.559"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:24:11.560" endtime="20230726 00:24:14.030"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:11.560" endtime="20230726 00:24:14.030"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:11.557" endtime="20230726 00:24:14.030"/>
+</kw>
+<doc>Test unsuccessful login with empty password (TC001.7).</doc>
+<tag>login_invalid</tag>
+<tag>TC001.7</tag>
+<tag>TS005</tag>
+<status status="PASS" starttime="20230726 00:24:02.499" endtime="20230726 00:24:14.031"/>
+</test>
+<test id="s1-s1-t8" name="Unsuccessful Login with Locked User" line="70">
+<kw name="Open Application" library="app_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:24:14.035" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:24:14.034" endtime="20230726 00:24:18.973"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:24:18.973" endtime="20230726 00:24:19.113"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:14.033" endtime="20230726 00:24:19.113"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test unsuccessful login with locked user started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:24:19.116" level="INFO">${timestamp} = 2023-07-26 00:24:19</msg>
+<status status="PASS" starttime="20230726 00:24:19.115" endtime="20230726 00:24:19.116"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:24:19.118" level="INFO">2023-07-26 00:24:19 - INFO - Test unsuccessful login with locked user started</msg>
+<status status="PASS" starttime="20230726 00:24:19.116" endtime="20230726 00:24:19.118"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:24:19.130" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:24:19.119" endtime="20230726 00:24:19.130"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:19.118" endtime="20230726 00:24:19.130"/>
+</kw>
+<msg timestamp="20230726 00:24:19.130" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:24:19.118" endtime="20230726 00:24:19.130"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:24:19.130" endtime="20230726 00:24:19.131"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:19.114" endtime="20230726 00:24:19.131"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${locked_out_user}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:19.134" level="INFO">Typing text 'locked_out_user' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:19.132" endtime="20230726 00:24:19.340"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:19.341" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:19.341" endtime="20230726 00:24:19.469"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:19.471" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:19.470" endtime="20230726 00:24:19.559"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:19.131" endtime="20230726 00:24:19.560"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Epic sadface: Sorry, this user has been locked out.</arg>
+<arg>10</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230726 00:24:19.560" endtime="20230726 00:24:19.577"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test unsuccessful login with locked user finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:24:19.578" level="INFO">${timestamp} = 2023-07-26 00:24:19</msg>
+<status status="PASS" starttime="20230726 00:24:19.578" endtime="20230726 00:24:19.579"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:24:19.579" level="INFO">2023-07-26 00:24:19 - INFO - Test unsuccessful login with locked user finished</msg>
+<status status="PASS" starttime="20230726 00:24:19.579" endtime="20230726 00:24:19.579"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:24:19.583" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:24:19.581" endtime="20230726 00:24:19.583"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:19.580" endtime="20230726 00:24:19.583"/>
+</kw>
+<msg timestamp="20230726 00:24:19.583" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:24:19.580" endtime="20230726 00:24:19.583"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:24:19.584" endtime="20230726 00:24:19.585"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:19.577" endtime="20230726 00:24:19.586"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:24:19.588" endtime="20230726 00:24:19.589"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:19.587" endtime="20230726 00:24:19.589"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:24:19.590" endtime="20230726 00:24:22.950"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:19.589" endtime="20230726 00:24:22.950"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:19.586" endtime="20230726 00:24:22.950"/>
+</kw>
+<doc>Test unsuccessful login with locked user (TC001.8).</doc>
+<tag>login_invalid</tag>
+<tag>TC001.8</tag>
+<tag>TS006</tag>
+<status status="PASS" starttime="20230726 00:24:14.032" endtime="20230726 00:24:22.951"/>
+</test>
+<test id="s1-s1-t9" name="Unsuccessful Login with Case Insensitive Username" line="78">
+<kw name="Open Application" library="app_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:24:22.953" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:24:22.952" endtime="20230726 00:24:27.831"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:24:27.832" endtime="20230726 00:24:27.949"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:22.952" endtime="20230726 00:24:27.949"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test unsuccessful login with case insensitive username started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:24:27.953" level="INFO">${timestamp} = 2023-07-26 00:24:27</msg>
+<status status="PASS" starttime="20230726 00:24:27.951" endtime="20230726 00:24:27.953"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:24:27.954" level="INFO">2023-07-26 00:24:27 - INFO - Test unsuccessful login with case insensitive username started</msg>
+<status status="PASS" starttime="20230726 00:24:27.953" endtime="20230726 00:24:27.955"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:24:27.965" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:24:27.959" endtime="20230726 00:24:27.965"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:27.956" endtime="20230726 00:24:27.965"/>
+</kw>
+<msg timestamp="20230726 00:24:27.966" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:24:27.955" endtime="20230726 00:24:27.966"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:24:27.967" endtime="20230726 00:24:27.968"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:27.950" endtime="20230726 00:24:27.969"/>
+</kw>
+<kw name="Convert To Upper Case" library="String">
+<var>${username_uppercase}</var>
+<arg>${standard_user}</arg>
+<doc>Converts string to upper case.</doc>
+<msg timestamp="20230726 00:24:27.970" level="INFO">${username_uppercase} = STANDARD_USER</msg>
+<status status="PASS" starttime="20230726 00:24:27.969" endtime="20230726 00:24:27.970"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${username_uppercase}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:27.973" level="INFO">Typing text 'STANDARD_USER' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:27.972" endtime="20230726 00:24:28.187"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:28.188" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:28.187" endtime="20230726 00:24:28.280"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:28.280" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:28.280" endtime="20230726 00:24:28.343"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:27.971" endtime="20230726 00:24:28.343"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Epic sadface: Username and password do not match any user in this service</arg>
+<arg>10</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230726 00:24:28.343" endtime="20230726 00:24:28.355"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test unsuccessful login with case insensitive username finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:24:28.355" level="INFO">${timestamp} = 2023-07-26 00:24:28</msg>
+<status status="PASS" starttime="20230726 00:24:28.355" endtime="20230726 00:24:28.355"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:24:28.356" level="INFO">2023-07-26 00:24:28 - INFO - Test unsuccessful login with case insensitive username finished</msg>
+<status status="PASS" starttime="20230726 00:24:28.356" endtime="20230726 00:24:28.356"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:24:28.358" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:24:28.356" endtime="20230726 00:24:28.358"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:28.356" endtime="20230726 00:24:28.358"/>
+</kw>
+<msg timestamp="20230726 00:24:28.358" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:24:28.356" endtime="20230726 00:24:28.358"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:24:28.358" endtime="20230726 00:24:28.358"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:28.355" endtime="20230726 00:24:28.359"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:24:28.359" endtime="20230726 00:24:28.360"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:28.359" endtime="20230726 00:24:28.360"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:24:28.360" endtime="20230726 00:24:30.614"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:28.360" endtime="20230726 00:24:30.615"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:28.359" endtime="20230726 00:24:30.615"/>
+</kw>
+<doc>Test unsuccessful login with case insensitive username (TC001.9).</doc>
+<tag>login_valid</tag>
+<tag>TC001.9</tag>
+<tag>TS007</tag>
+<status status="PASS" starttime="20230726 00:24:22.951" endtime="20230726 00:24:30.615"/>
+</test>
+<test id="s1-s1-t10" name="Login Resilient to SQL Injection Attacks" line="87">
+<kw name="Open Application" library="app_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:24:30.619" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:24:30.618" endtime="20230726 00:24:34.436"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:24:34.436" endtime="20230726 00:24:34.560"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:30.617" endtime="20230726 00:24:34.560"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test login feature is resilient to SQL Injection attacks started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:24:34.561" level="INFO">${timestamp} = 2023-07-26 00:24:34</msg>
+<status status="PASS" starttime="20230726 00:24:34.561" endtime="20230726 00:24:34.562"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:24:34.563" level="INFO">2023-07-26 00:24:34 - INFO - Test login feature is resilient to SQL Injection attacks started</msg>
+<status status="PASS" starttime="20230726 00:24:34.563" endtime="20230726 00:24:34.563"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:24:34.618" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:24:34.564" endtime="20230726 00:24:34.618"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:34.563" endtime="20230726 00:24:34.619"/>
+</kw>
+<msg timestamp="20230726 00:24:34.619" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:24:34.563" endtime="20230726 00:24:34.619"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:24:34.619" endtime="20230726 00:24:34.620"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:34.560" endtime="20230726 00:24:34.620"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>'DROP TABLE tablename; --</arg>
+<arg>'DROP TABLE tablename; --</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:34.623" level="INFO">Typing text ''DROP TABLE tablename; --' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:34.621" endtime="20230726 00:24:34.814"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:34.815" level="INFO">Typing text ''DROP TABLE tablename; --' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:34.814" endtime="20230726 00:24:34.949"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:34.950" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:34.949" endtime="20230726 00:24:35.015"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:34.620" endtime="20230726 00:24:35.015"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Epic sadface: Username and password do not match any user in this service</arg>
+<arg>10</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230726 00:24:35.015" endtime="20230726 00:24:35.030"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test login feature is resilient to SQL Injection attacks finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:24:35.030" level="INFO">${timestamp} = 2023-07-26 00:24:35</msg>
+<status status="PASS" starttime="20230726 00:24:35.030" endtime="20230726 00:24:35.030"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:24:35.032" level="INFO">2023-07-26 00:24:35 - INFO - Test login feature is resilient to SQL Injection attacks finished</msg>
+<status status="PASS" starttime="20230726 00:24:35.032" endtime="20230726 00:24:35.032"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:24:35.052" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:24:35.033" endtime="20230726 00:24:35.053"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:35.032" endtime="20230726 00:24:35.053"/>
+</kw>
+<msg timestamp="20230726 00:24:35.053" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:24:35.032" endtime="20230726 00:24:35.054"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:24:35.054" endtime="20230726 00:24:35.054"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:35.030" endtime="20230726 00:24:35.054"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:24:35.056" endtime="20230726 00:24:35.056"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:35.055" endtime="20230726 00:24:35.056"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:24:35.056" endtime="20230726 00:24:37.335"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:35.056" endtime="20230726 00:24:37.336"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:35.055" endtime="20230726 00:24:37.336"/>
+</kw>
+<doc>Test login feature is resilient to SQL Injection attacks (TC001.10).</doc>
+<tag>security</tag>
+<tag>TC001.10</tag>
+<tag>TS008</tag>
+<status status="PASS" starttime="20230726 00:24:30.616" endtime="20230726 00:24:37.336"/>
+</test>
+<test id="s1-s1-t11" name="Login Session Timeout" line="95">
+<kw name="Open Application" library="app_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:24:37.340" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:24:37.339" endtime="20230726 00:24:41.508"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:24:41.508" endtime="20230726 00:24:41.656"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:37.338" endtime="20230726 00:24:41.656"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test login session timeout after a period of inactivity started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:24:41.661" level="INFO">${timestamp} = 2023-07-26 00:24:41</msg>
+<status status="PASS" starttime="20230726 00:24:41.659" endtime="20230726 00:24:41.661"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:24:41.662" level="INFO">2023-07-26 00:24:41 - INFO - Test login session timeout after a period of inactivity started</msg>
+<status status="PASS" starttime="20230726 00:24:41.661" endtime="20230726 00:24:41.662"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:24:41.785" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:24:41.666" endtime="20230726 00:24:41.786"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:41.663" endtime="20230726 00:24:41.787"/>
+</kw>
+<msg timestamp="20230726 00:24:41.788" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:24:41.663" endtime="20230726 00:24:41.788"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:24:41.789" endtime="20230726 00:24:41.790"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:41.657" endtime="20230726 00:24:41.791"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${standard_user}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:41.795" level="INFO">Typing text 'standard_user' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:41.793" endtime="20230726 00:24:42.125"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:42.126" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:42.125" endtime="20230726 00:24:42.241"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:24:42.241" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:24:42.241" endtime="20230726 00:24:42.384"/>
+</kw>
+<status status="PASS" starttime="20230726 00:24:41.791" endtime="20230726 00:24:42.385"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${SESSION_TIMEOUT} minutes</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230726 00:34:42.387" level="INFO">Slept 10 minutes</msg>
+<status status="PASS" starttime="20230726 00:24:42.386" endtime="20230726 00:34:42.388"/>
+</kw>
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<msg timestamp="20230726 00:34:42.399" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x007CA813+48355]
+	(No symbol) [0x0075C4B1]
+	(No symbol) [0x00665358]
+	(No symbol) [0x00657D96]
+	(No symbol) [0x00657AB9]
+	(No symbol) [0x006667C0]
+	(No symbol) [0x006BC4D8]
+	(No symbol) [0x006AA536]
+	(No symbol) [0x006882DC]
+	(No symbol) [0x006893DD]
+	GetHandleVerifier [0x00A2AABD+2539405]
+	GetHandleVerifier [0x00A6A78F+2800735]
+	GetHandleVerifier [0x00A6456C+2775612]
+	GetHandleVerifier [0x008551E0+616112]
+	(No symbol) [0x00765F8C]
+	(No symbol) [0x00762328]
+	(No symbol) [0x0076240B]
+	(No symbol) [0x00754FF7]
+	BaseThreadInitThunk [0x758300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x778A7B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x778A7AEE+238]
+</msg>
+<msg timestamp="20230726 00:34:42.401" level="FAIL">WebDriverException: Message: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x007CA813+48355]
+	(No symbol) [0x0075C4B1]
+	(No symbol) [0x00665358]
+	(No symbol) [0x00657D96]
+	(No symbol) [0x00657AB9]
+	(No symbol) [0x006667C0]
+	(No symbol) [0x006BC4D8]
+	(No symbol) [0x006AA536]
+	(No symbol) [0x006882DC]
+	(No symbol) [0x006893DD]
+	GetHandleVerifier [0x00A2AABD+2539405]
+	GetHandleVerifier [0x00A6A78F+2800735]
+	GetHandleVerifier [0x00A6456C+2775612]
+	GetHandleVerifier [0x008551E0+616112]
+	(No symbol) [0x00765F8C]
+	(No symbol) [0x00762328]
+	(No symbol) [0x0076240B]
+	(No symbol) [0x00754FF7]
+	BaseThreadInitThunk [0x758300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x778A7B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x778A7AEE+238]
+</msg>
+<status status="FAIL" starttime="20230726 00:34:42.389" endtime="20230726 00:34:42.435"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${LOGIN_BUTTON_LOCATOR}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20230726 00:34:42.435" endtime="20230726 00:34:42.436"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test login session timeout after a period of inactivity finished</arg>
+<status status="NOT RUN" starttime="20230726 00:34:42.437" endtime="20230726 00:34:42.437"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230726 00:34:42.454" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x007CA813+48355]
+	(No symbol) [0x0075C4B1]
+	(No symbol) [0x00665358]
+	(No symbol) [0x00657D96]
+	(No symbol) [0x00657AB9]
+	(No symbol) [0x006667C0]
+	(No symbol) [0x006BC4D8]
+	(No symbol) [0x006AA536]
+	(No symbol) [0x006882DC]
+	(No symbol) [0x006893DD]
+	GetHandleVerifier [0x00A2AABD+2539405]
+	GetHandleVerifier [0x00A6A78F+2800735]
+	GetHandleVerifier [0x00A6456C+2775612]
+	GetHandleVerifier [0x008551E0+616112]
+	(No symbol) [0x00765F8C]
+	(No symbol) [0x00762328]
+	(No symbol) [0x0076240B]
+	(No symbol) [0x00754FF7]
+	BaseThreadInitThunk [0x758300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x778A7B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x778A7AEE+238]
+</msg>
+<msg timestamp="20230726 00:34:42.455" level="FAIL">WebDriverException: Message: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x007CA813+48355]
+	(No symbol) [0x0075C4B1]
+	(No symbol) [0x00665358]
+	(No symbol) [0x00657D96]
+	(No symbol) [0x00657AB9]
+	(No symbol) [0x006667C0]
+	(No symbol) [0x006BC4D8]
+	(No symbol) [0x006AA536]
+	(No symbol) [0x006882DC]
+	(No symbol) [0x006893DD]
+	GetHandleVerifier [0x00A2AABD+2539405]
+	GetHandleVerifier [0x00A6A78F+2800735]
+	GetHandleVerifier [0x00A6456C+2775612]
+	GetHandleVerifier [0x008551E0+616112]
+	(No symbol) [0x00765F8C]
+	(No symbol) [0x00762328]
+	(No symbol) [0x0076240B]
+	(No symbol) [0x00754FF7]
+	BaseThreadInitThunk [0x758300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x778A7B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x778A7AEE+238]
+</msg>
+<status status="FAIL" starttime="20230726 00:34:42.441" endtime="20230726 00:34:42.475"/>
+</kw>
+<status status="FAIL" starttime="20230726 00:34:42.440" endtime="20230726 00:34:42.476"/>
+</kw>
+<status status="FAIL" starttime="20230726 00:34:42.439" endtime="20230726 00:34:42.477"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:34:42.479" endtime="20230726 00:34:44.755"/>
+</kw>
+<status status="PASS" starttime="20230726 00:34:42.478" endtime="20230726 00:34:44.755"/>
+</kw>
+<status status="FAIL" starttime="20230726 00:34:42.438" endtime="20230726 00:34:44.756">WebDriverException: Message: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x007CA813+48355]
+	(No symbol) [0x0075C4B1]
+	(No symbol) [0x00665358]
+	(No symbol) [0x00657D96]
+	(No symbol) [0x00657AB9]
+	(No symbol) [0x006667C0]
+	(No symbol) [0x006BC4D8]
+	(No symbol) [0x006AA536]
+	(No symbol) [0x006882DC]
+	(No symbol) [0x006893DD]
+	GetHandleVerifier [0x00A2AABD+2539405]
+	GetHandleVerifier [0x00A6A78F+2800735]
+	GetHandleVerifier [0x00A6456C+2775612]
+	GetHandleVerifier [0x008551E0+616112]
+	(No symbol) [0x00765F8C]
+	(No symbol) [0x00762328]
+	(No symbol) [0x0076240B]
+	(No symbol) [0x00754FF7]
+	BaseThreadInitThunk [0x758300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x778A7B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x778A7AEE+238]
+</status>
+</kw>
+<doc>Test login session timeout after a period of inactivity (TC001.11).</doc>
+<tag>login_session</tag>
+<tag>TC001.11</tag>
+<tag>TS009</tag>
+<status status="FAIL" starttime="20230726 00:24:37.337" endtime="20230726 00:34:44.757">WebDriverException: Message: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x007CA813+48355]
+	(No symbol) [0x0075C4B1]
+	(No symbol) [0x00665358]
+	(No symbol) [0x00657D96]
+	(No symbol) [0x00657AB9]
+	(No symbol) [0x006667C0]
+	(No symbol) [0x006BC4D8]
+	(No symbol) [0x006AA536]
+	(No symbol) [0x006882DC]
+	(No symbol) [0x006893DD]
+	GetHandleVerifier [0x00A2AABD+2539405]
+	GetHandleVerifier [0x00A6A78F+2800735]
+	GetHandleVerifier [0x00A6456C+2775612]
+	GetHandleVerifier [0x008551E0+616112]
+	(No symbol) [0x00765F8C]
+	(No symbol) [0x00762328]
+	(No symbol) [0x0076240B]
+	(No symbol) [0x00754FF7]
+	BaseThreadInitThunk [0x758300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x778A7B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x778A7AEE+238]
+
+
+Also teardown failed:
+WebDriverException: Message: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x007CA813+48355]
+	(No symbol) [0x0075C4B1]
+	(No symbol) [0x00665358]
+	(No symbol) [0x00657D96]
+	(No symbol) [0x00657AB9]
+	(No symbol) [0x006667C0]
+	(No symbol) [0x006BC4D8]
+	(No symbol) [0x006AA536]
+	(No symbol) [0x006882DC]
+	(No symbol) [0x006893DD]
+	GetHandleVerifier [0x00A2AABD+2539405]
+	GetHandleVerifier [0x00A6A78F+2800735]
+	GetHandleVerifier [0x00A6456C+2775612]
+	GetHandleVerifier [0x008551E0+616112]
+	(No symbol) [0x00765F8C]
+	(No symbol) [0x00762328]
+	(No symbol) [0x0076240B]
+	(No symbol) [0x00754FF7]
+	BaseThreadInitThunk [0x758300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x778A7B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x778A7AEE+238]
+</status>
+</test>
+<test id="s1-s1-t12" name="Unsuccessful Login with Whitespace in Username and Password" line="105">
+<kw name="Open Application" library="app_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 00:34:44.761" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230726 00:34:44.760" endtime="20230726 00:34:48.153"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230726 00:34:48.153" endtime="20230726 00:34:48.278"/>
+</kw>
+<status status="PASS" starttime="20230726 00:34:44.759" endtime="20230726 00:34:48.279"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test unsuccessful login with leading and trailing whitespaces in username and password started</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:34:48.283" level="INFO">${timestamp} = 2023-07-26 00:34:48</msg>
+<status status="PASS" starttime="20230726 00:34:48.281" endtime="20230726 00:34:48.283"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:34:48.284" level="INFO">2023-07-26 00:34:48 - INFO - Test unsuccessful login with leading and trailing whitespaces in username and password started</msg>
+<status status="PASS" starttime="20230726 00:34:48.283" endtime="20230726 00:34:48.285"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:34:48.297" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:34:48.289" endtime="20230726 00:34:48.298"/>
+</kw>
+<status status="PASS" starttime="20230726 00:34:48.286" endtime="20230726 00:34:48.298"/>
+</kw>
+<msg timestamp="20230726 00:34:48.299" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:34:48.285" endtime="20230726 00:34:48.299"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:34:48.300" endtime="20230726 00:34:48.302"/>
+</kw>
+<status status="PASS" starttime="20230726 00:34:48.279" endtime="20230726 00:34:48.302"/>
+</kw>
+<kw name="Login" library="app_keywords">
+<arg>${SPACE}${standard_user}${SPACE}</arg>
+<arg>${SPACE}${password}${SPACE}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:34:48.308" level="INFO">Typing text ' standard_user ' into text field '//input[@data-test="username"]'.</msg>
+<status status="PASS" starttime="20230726 00:34:48.305" endtime="20230726 00:34:48.509"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 00:34:48.510" level="INFO">Typing text ' secret_sauce ' into text field '//input[@data-test="password"]'.</msg>
+<status status="PASS" starttime="20230726 00:34:48.510" endtime="20230726 00:34:48.637"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button_locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 00:34:48.639" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<status status="PASS" starttime="20230726 00:34:48.637" endtime="20230726 00:34:48.715"/>
+</kw>
+<status status="PASS" starttime="20230726 00:34:48.303" endtime="20230726 00:34:48.715"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Epic sadface: Username and password do not match any user in this service</arg>
+<arg>10</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230726 00:34:48.715" endtime="20230726 00:34:48.731"/>
+</kw>
+<kw name="Log Message" library="app_keywords">
+<arg>Test unsuccessful login with leading and trailing whitespaces in username and password finished</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230726 00:34:48.732" level="INFO">${timestamp} = 2023-07-26 00:34:48</msg>
+<status status="PASS" starttime="20230726 00:34:48.732" endtime="20230726 00:34:48.732"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230726 00:34:48.733" level="INFO">2023-07-26 00:34:48 - INFO - Test unsuccessful login with leading and trailing whitespaces in username and password finished</msg>
+<status status="PASS" starttime="20230726 00:34:48.732" endtime="20230726 00:34:48.733"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Write Log To File</arg>
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Write Log To File" library="app_keywords">
+<arg>C:/Users/Admin/PycharmProjects/SauceDemoAssignment/utils/log.txt</arg>
+<arg>${timestamp} - ${level} - ${message}</arg>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${message}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230726 00:34:48.736" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt"&gt;C:\Users\Admin\PycharmProjects\SauceDemoAssignment\utils\log.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 00:34:48.734" endtime="20230726 00:34:48.736"/>
+</kw>
+<status status="PASS" starttime="20230726 00:34:48.733" endtime="20230726 00:34:48.736"/>
+</kw>
+<msg timestamp="20230726 00:34:48.736" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230726 00:34:48.733" endtime="20230726 00:34:48.736"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}'=='FAIL'</arg>
+<arg>Log</arg>
+<arg>Writing log to file failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230726 00:34:48.737" endtime="20230726 00:34:48.737"/>
+</kw>
+<status status="PASS" starttime="20230726 00:34:48.731" endtime="20230726 00:34:48.737"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Capture Screenshot If Failed</arg>
+<arg>AND</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Capture Screenshot If Failed" library="app_keywords">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>filename=screenshots/${SUITE NAME}_${TEST NAME}_fail.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230726 00:34:48.739" endtime="20230726 00:34:48.739"/>
+</kw>
+<status status="PASS" starttime="20230726 00:34:48.738" endtime="20230726 00:34:48.739"/>
+</kw>
+<kw name="Close Application" library="app_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 00:34:48.740" endtime="20230726 00:34:51.003"/>
+</kw>
+<status status="PASS" starttime="20230726 00:34:48.739" endtime="20230726 00:34:51.004"/>
+</kw>
+<status status="PASS" starttime="20230726 00:34:48.738" endtime="20230726 00:34:51.004"/>
+</kw>
+<doc>Test unsuccessful login with leading and trailing whitespaces in username and password (TC001.12).</doc>
+<tag>login_invalid</tag>
+<tag>TC001.12</tag>
+<tag>TS010</tag>
+<status status="PASS" starttime="20230726 00:34:44.758" endtime="20230726 00:34:51.005"/>
+</test>
+<doc>A test suite with tests for login functionality.</doc>
+<status status="FAIL" starttime="20230726 00:23:03.985" endtime="20230726 00:34:51.008"/>
+</suite>
+<status status="FAIL" starttime="20230726 00:23:03.971" endtime="20230726 00:34:51.018"/>
+</suite>
+<statistics>
+<total>
+<stat pass="11" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="6" fail="0" skip="0">login_invalid</stat>
+<stat pass="0" fail="1" skip="0">login_session</stat>
+<stat pass="4" fail="0" skip="0">login_valid</stat>
+<stat pass="1" fail="0" skip="0">security</stat>
+<stat pass="1" fail="0" skip="0">TC001.1</stat>
+<stat pass="1" fail="0" skip="0">TC001.10</stat>
+<stat pass="0" fail="1" skip="0">TC001.11</stat>
+<stat pass="1" fail="0" skip="0">TC001.12</stat>
+<stat pass="1" fail="0" skip="0">TC001.2</stat>
+<stat pass="1" fail="0" skip="0">TC001.3</stat>
+<stat pass="1" fail="0" skip="0">TC001.4</stat>
+<stat pass="1" fail="0" skip="0">TC001.5</stat>
+<stat pass="1" fail="0" skip="0">TC001.6</stat>
+<stat pass="1" fail="0" skip="0">TC001.7</stat>
+<stat pass="1" fail="0" skip="0">TC001.8</stat>
+<stat pass="1" fail="0" skip="0">TC001.9</stat>
+<stat pass="3" fail="0" skip="0">TS001</stat>
+<stat pass="1" fail="0" skip="0">TS002</stat>
+<stat pass="1" fail="0" skip="0">TS003</stat>
+<stat pass="1" fail="0" skip="0">TS004</stat>
+<stat pass="1" fail="0" skip="0">TS005</stat>
+<stat pass="1" fail="0" skip="0">TS006</stat>
+<stat pass="1" fail="0" skip="0">TS007</stat>
+<stat pass="1" fail="0" skip="0">TS008</stat>
+<stat pass="0" fail="1" skip="0">TS009</stat>
+<stat pass="1" fail="0" skip="0">TS010</stat>
+</tag>
+<suite>
+<stat pass="11" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="11" fail="1" skip="0" id="s1-s1" name="Login Tests">Tests.Login Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230726 00:34:42.399" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x007CA813+48355]
+	(No symbol) [0x0075C4B1]
+	(No symbol) [0x00665358]
+	(No symbol) [0x00657D96]
+	(No symbol) [0x00657AB9]
+	(No symbol) [0x006667C0]
+	(No symbol) [0x006BC4D8]
+	(No symbol) [0x006AA536]
+	(No symbol) [0x006882DC]
+	(No symbol) [0x006893DD]
+	GetHandleVerifier [0x00A2AABD+2539405]
+	GetHandleVerifier [0x00A6A78F+2800735]
+	GetHandleVerifier [0x00A6456C+2775612]
+	GetHandleVerifier [0x008551E0+616112]
+	(No symbol) [0x00765F8C]
+	(No symbol) [0x00762328]
+	(No symbol) [0x0076240B]
+	(No symbol) [0x00754FF7]
+	BaseThreadInitThunk [0x758300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x778A7B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x778A7AEE+238]
+</msg>
+<msg timestamp="20230726 00:34:42.454" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x007CA813+48355]
+	(No symbol) [0x0075C4B1]
+	(No symbol) [0x00665358]
+	(No symbol) [0x00657D96]
+	(No symbol) [0x00657AB9]
+	(No symbol) [0x006667C0]
+	(No symbol) [0x006BC4D8]
+	(No symbol) [0x006AA536]
+	(No symbol) [0x006882DC]
+	(No symbol) [0x006893DD]
+	GetHandleVerifier [0x00A2AABD+2539405]
+	GetHandleVerifier [0x00A6A78F+2800735]
+	GetHandleVerifier [0x00A6456C+2775612]
+	GetHandleVerifier [0x008551E0+616112]
+	(No symbol) [0x00765F8C]
+	(No symbol) [0x00762328]
+	(No symbol) [0x0076240B]
+	(No symbol) [0x00754FF7]
+	BaseThreadInitThunk [0x758300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x778A7B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x778A7AEE+238]
+</msg>
+</errors>
+</robot>

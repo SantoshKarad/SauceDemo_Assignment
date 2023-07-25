@@ -1,0 +1,124 @@
+2023-07-26 00:20:11 - INFO - Test successful login with valid credentials started
+2023-07-26 00:20:11 - INFO - Test adding a product to the cart started
+2023-07-26 00:20:11 - INFO - Test successful login with valid credentials finished
+2023-07-26 00:20:11 - INFO - Test checkout with valid inputs started
+2023-07-26 00:20:12 - INFO - Test adding a product to the cart finished
+2023-07-26 00:20:12 - INFO - Test checkout with valid inputs finished
+2023-07-26 00:20:21 - INFO - Test successful login with problem user started
+2023-07-26 00:20:21 - INFO - Test successful login with problem user finished
+2023-07-26 00:20:21 - INFO - Test removing a product from the cart started
+2023-07-26 00:20:22 - INFO - Test removing a product from the cart finished
+2023-07-26 00:20:22 - INFO - Test checkout with missing first name started
+2023-07-26 00:20:22 - INFO - Test checkout with missing first name finished
+2023-07-26 00:20:31 - INFO - Test successful login with performance glitch user started
+2023-07-26 00:20:32 - INFO - Test updating cart count when a product is added started
+2023-07-26 00:20:33 - INFO - Test updating cart count when a product is added finished
+2023-07-26 00:20:33 - INFO - Test checkout with missing last name started
+2023-07-26 00:20:33 - INFO - Test checkout with missing last name finished
+2023-07-26 00:20:37 - INFO - Test successful login with performance glitch user finished
+2023-07-26 00:20:40 - INFO - Test checking out with products in the cart started
+2023-07-26 00:20:41 - INFO - Test checking out with products in the cart finished
+2023-07-26 00:20:42 - INFO - Test checkout with missing postal code started
+2023-07-26 00:20:42 - INFO - Test checkout with missing postal code finished
+2023-07-26 00:20:44 - INFO - Test unsuccessful login with invalid username started
+2023-07-26 00:20:44 - INFO - Test unsuccessful login with invalid username finished
+2023-07-26 00:20:49 - INFO - Test checking out with an empty cart started
+2023-07-26 00:20:49 - INFO - Test checking out with an empty cart finished
+2023-07-26 00:20:51 - INFO - Test checkout with all fields left empty started
+2023-07-26 00:20:52 - INFO - Test checkout with missing first name finished
+2023-07-26 00:20:53 - INFO - Test unsuccessful login with invalid password started
+2023-07-26 00:20:53 - INFO - Test unsuccessful login with invalid password finished
+2023-07-26 00:20:59 - INFO - Test checking cart when no products are added started
+2023-07-26 00:20:59 - INFO - Test checking cart when no products are added finished
+2023-07-26 00:21:01 - INFO - Test order confirmation after final checkout started
+2023-07-26 00:21:02 - INFO - Test order confirmation after final checkout finished
+2023-07-26 00:21:03 - INFO - Test unsuccessful login with empty username started
+2023-07-26 00:21:04 - INFO - Test unsuccessful login with empty username finished
+2023-07-26 00:21:08 - INFO - Test retaining products in cart after logout and login started
+2023-07-26 00:21:09 - INFO - Test retaining products in cart after logout and login finished
+2023-07-26 00:21:12 - INFO - Test checkout with special characters in first name started
+2023-07-26 00:21:12 - INFO - Test checkout with special characters in first name finished
+2023-07-26 00:21:13 - INFO - Test unsuccessful login with empty password started
+2023-07-26 00:21:13 - INFO - Test unsuccessful login with empty password finished
+2023-07-26 00:21:16 - INFO - Test continuing shopping from the cart started
+2023-07-26 00:21:16 - INFO - Test continuing shopping from the cart finished
+2023-07-26 00:21:21 - INFO - Test unsuccessful login with locked user started
+2023-07-26 00:21:21 - INFO - Test checkout with special characters in last name started
+2023-07-26 00:21:21 - INFO - Test unsuccessful login with locked user finished
+2023-07-26 00:21:22 - INFO - Test checkout with special characters in last name finished
+2023-07-26 00:21:29 - INFO - Test unsuccessful login with case insensitive username started
+2023-07-26 00:21:29 - INFO - Test unsuccessful login with case insensitive username finished
+2023-07-26 00:21:30 - INFO - Test checkout with special characters in postal code started
+2023-07-26 00:21:30 - INFO - Test checkout with special characters in postal code finished
+2023-07-26 00:21:36 - INFO - Test login feature is resilient to SQL Injection attacks started
+2023-07-26 00:21:36 - INFO - Test login feature is resilient to SQL Injection attacks finished
+2023-07-26 00:21:38 - INFO - Test checkout with numeric values in first name started
+2023-07-26 00:21:39 - INFO - Test checkout with numeric values in first name finished
+2023-07-26 00:21:44 - INFO - Test login session timeout after a period of inactivity started
+2023-07-26 00:21:47 - INFO - Test checkout with numeric values in last name started
+2023-07-26 00:21:47 - INFO - Test checkout with numeric values in last name finished
+2023-07-26 00:21:54 - INFO - Test checkout with alphabetical values in postal code started
+2023-07-26 00:21:54 - INFO - Test checkout with alphabetical values in postal code finished
+2023-07-26 00:23:09 - INFO - Test successful login with valid credentials started
+2023-07-26 00:23:10 - INFO - Test successful login with valid credentials finished
+2023-07-26 00:23:10 - INFO - Test adding a product to the cart started
+2023-07-26 00:23:10 - INFO - Test checkout with valid inputs started
+2023-07-26 00:23:10 - INFO - Test adding a product to the cart finished
+2023-07-26 00:23:11 - INFO - Test checkout with valid inputs finished
+2023-07-26 00:23:18 - INFO - Test successful login with problem user started
+2023-07-26 00:23:18 - INFO - Test successful login with problem user finished
+2023-07-26 00:23:20 - INFO - Test removing a product from the cart started
+2023-07-26 00:23:21 - INFO - Test removing a product from the cart finished
+2023-07-26 00:23:21 - INFO - Test checkout with missing first name started
+2023-07-26 00:23:22 - INFO - Test checkout with missing first name finished
+2023-07-26 00:23:26 - INFO - Test successful login with performance glitch user started
+2023-07-26 00:23:29 - INFO - Test updating cart count when a product is added started
+2023-07-26 00:23:29 - INFO - Test updating cart count when a product is added finished
+2023-07-26 00:23:30 - INFO - Test checkout with missing last name started
+2023-07-26 00:23:30 - INFO - Test checkout with missing last name finished
+2023-07-26 00:23:32 - INFO - Test successful login with performance glitch user finished
+2023-07-26 00:23:38 - INFO - Test checking out with products in the cart started
+2023-07-26 00:23:39 - INFO - Test checkout with missing postal code started
+2023-07-26 00:23:39 - INFO - Test checking out with products in the cart finished
+2023-07-26 00:23:40 - INFO - Test checkout with missing postal code finished
+2023-07-26 00:23:40 - INFO - Test unsuccessful login with invalid username started
+2023-07-26 00:23:40 - INFO - Test unsuccessful login with invalid username finished
+2023-07-26 00:23:49 - INFO - Test checking out with an empty cart started
+2023-07-26 00:23:50 - INFO - Test checking out with an empty cart finished
+2023-07-26 00:23:50 - INFO - Test unsuccessful login with invalid password started
+2023-07-26 00:23:50 - INFO - Test checkout with all fields left empty started
+2023-07-26 00:23:50 - INFO - Test unsuccessful login with invalid password finished
+2023-07-26 00:23:50 - INFO - Test checkout with missing first name finished
+2023-07-26 00:23:59 - INFO - Test unsuccessful login with empty username started
+2023-07-26 00:23:59 - INFO - Test checking cart when no products are added started
+2023-07-26 00:23:59 - INFO - Test unsuccessful login with empty username finished
+2023-07-26 00:24:00 - INFO - Test checking cart when no products are added finished
+2023-07-26 00:24:00 - INFO - Test order confirmation after final checkout started
+2023-07-26 00:24:01 - INFO - Test order confirmation after final checkout finished
+2023-07-26 00:24:10 - INFO - Test unsuccessful login with empty password started
+2023-07-26 00:24:11 - INFO - Test unsuccessful login with empty password finished
+2023-07-26 00:24:11 - INFO - Test retaining products in cart after logout and login started
+2023-07-26 00:24:12 - INFO - Test retaining products in cart after logout and login finished
+2023-07-26 00:24:13 - INFO - Test checkout with special characters in first name started
+2023-07-26 00:24:13 - INFO - Test checkout with special characters in first name finished
+2023-07-26 00:24:19 - INFO - Test unsuccessful login with locked user started
+2023-07-26 00:24:19 - INFO - Test unsuccessful login with locked user finished
+2023-07-26 00:24:21 - INFO - Test continuing shopping from the cart started
+2023-07-26 00:24:21 - INFO - Test continuing shopping from the cart finished
+2023-07-26 00:24:23 - INFO - Test checkout with special characters in last name started
+2023-07-26 00:24:24 - INFO - Test checkout with special characters in last name finished
+2023-07-26 00:24:27 - INFO - Test unsuccessful login with case insensitive username started
+2023-07-26 00:24:28 - INFO - Test unsuccessful login with case insensitive username finished
+2023-07-26 00:24:34 - INFO - Test login feature is resilient to SQL Injection attacks started
+2023-07-26 00:24:34 - INFO - Test checkout with special characters in postal code started
+2023-07-26 00:24:35 - INFO - Test login feature is resilient to SQL Injection attacks finished
+2023-07-26 00:24:35 - INFO - Test checkout with special characters in postal code finished
+2023-07-26 00:24:41 - INFO - Test login session timeout after a period of inactivity started
+2023-07-26 00:24:43 - INFO - Test checkout with numeric values in first name started
+2023-07-26 00:24:44 - INFO - Test checkout with numeric values in first name finished
+2023-07-26 00:24:50 - INFO - Test checkout with numeric values in last name started
+2023-07-26 00:24:50 - INFO - Test checkout with numeric values in last name finished
+2023-07-26 00:24:57 - INFO - Test checkout with alphabetical values in postal code started
+2023-07-26 00:24:57 - INFO - Test checkout with alphabetical values in postal code finished
+2023-07-26 00:34:48 - INFO - Test unsuccessful login with leading and trailing whitespaces in username and password started
+2023-07-26 00:34:48 - INFO - Test unsuccessful login with leading and trailing whitespaces in username and password finished

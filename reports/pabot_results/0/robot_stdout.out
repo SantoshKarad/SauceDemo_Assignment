@@ -1,0 +1,28 @@
+==============================================================================
+Tests                                                                         
+==============================================================================
+Tests.Cart Tests :: A test suite with tests for cart functionality.           
+==============================================================================
+Verify a product can be added to the cart :: Test adding a product... | PASS |
+------------------------------------------------------------------------------
+Verify a product can be removed from the cart :: Test removing a p... | PASS |
+------------------------------------------------------------------------------
+Verify the cart count is updated when a product is added :: Test u... | PASS |
+------------------------------------------------------------------------------
+Verify user can checkout with products in the cart :: Test checkin... | PASS |
+------------------------------------------------------------------------------
+Verify user can checkout when the cart is empty :: Test checking o... | PASS |
+------------------------------------------------------------------------------
+Verify the cart is empty when no products are added :: Test checki... | PASS |
+------------------------------------------------------------------------------
+Verify the cart retains products when user logs out and logs back ... | PASS |
+------------------------------------------------------------------------------
+Verify user can continue shopping from the cart :: Test continuing... | PASS |
+------------------------------------------------------------------------------
+Tests.Cart Tests :: A test suite with tests for cart functionality.   | PASS |
+8 tests, 8 passed, 0 failed
+==============================================================================
+Tests                                                                 | PASS |
+8 tests, 8 passed, 0 failed
+==============================================================================
+Output:  C:\Users\Admin\PycharmProjects\SauceDemoAssignment\reports\pabot_results\0\output.xml

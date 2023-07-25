@@ -1,0 +1,36 @@
+==============================================================================
+Tests                                                                         
+==============================================================================
+Tests.Checkout Tests :: A test suite with tests for checkout functionality.   
+==============================================================================
+Checkout With Valid Inputs :: Test checkout process with all valid... | PASS |
+------------------------------------------------------------------------------
+Checkout With Missing First Name :: Test checkout process with mis... | PASS |
+------------------------------------------------------------------------------
+Checkout With Missing Last Name :: Test checkout process with miss... | PASS |
+------------------------------------------------------------------------------
+Checkout With Missing Postal Code :: Test checkout process with mi... | PASS |
+------------------------------------------------------------------------------
+Checkout With Empty Fields :: Test checkout process with all field... | PASS |
+------------------------------------------------------------------------------
+Verify Order Confirmation After Final Checkout :: Test order confi... | PASS |
+------------------------------------------------------------------------------
+Checkout With Special Characters In FirstName :: Test checkout pro... | PASS |
+------------------------------------------------------------------------------
+Checkout With Special Characters In LastName :: Test checkout proc... | PASS |
+------------------------------------------------------------------------------
+Checkout With Special Characters In Postal Code :: Test checkout p... | PASS |
+------------------------------------------------------------------------------
+Checkout With Numeric Values In FirstName :: Test checkout process... | PASS |
+------------------------------------------------------------------------------
+Checkout With Numeric Values In LastName :: Test checkout process ... | PASS |
+------------------------------------------------------------------------------
+Checkout With Alphabetical Values In PostalCode :: Test checkout p... | PASS |
+------------------------------------------------------------------------------
+Tests.Checkout Tests :: A test suite with tests for checkout funct... | PASS |
+12 tests, 12 passed, 0 failed
+==============================================================================
+Tests                                                                 | PASS |
+12 tests, 12 passed, 0 failed
+==============================================================================
+Output:  C:\Users\Admin\PycharmProjects\SauceDemoAssignment\pabot_results\1\output.xml
