@@ -19,7 +19,7 @@ These instructions will get you a copy of the project up and running on your loc
 git clone https://github.com/SantoshKarad/SauceDemo_Assignment.git
 2. Navigate to the project folder.
 cd SauceDemoAssignment
-3. Install the required packages.
+4. Install the required packages.
 pip install -r requirements.txt
 
 ### Running the tests
