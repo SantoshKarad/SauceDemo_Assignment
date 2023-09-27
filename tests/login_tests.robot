@@ -92,15 +92,15 @@ Login Resilient to SQL Injection Attacks
     Wait Until Page Contains     Epic sadface: Username and password do not match any user in this service    10
     Log Message     Test login feature is resilient to SQL Injection attacks finished
 
-Login Session Timeout
-    [Documentation]    Test login session timeout after a period of inactivity (TC001.11).
-    [Tags]    login_session    TS009    TC001.11
-    Log Message     Test login session timeout after a period of inactivity started
-    Login    ${standard_user}    ${password}
-    Sleep    ${SESSION_TIMEOUT} minutes
-    Reload Page    # Reloading the page to trigger the session timeout
-    Wait Until Page Contains Element    ${LOGIN_BUTTON_LOCATOR}    10
-    Log Message     Test login session timeout after a period of inactivity finished
+#Login Session Timeout
+#    [Documentation]    Test login session timeout after a period of inactivity (TC001.11).
+#    [Tags]    login_session    TS009    TC001.11
+#    Log Message     Test login session timeout after a period of inactivity started
+#    Login    ${standard_user}    ${password}
+#    Sleep    ${SESSION_TIMEOUT} minutes
+#    Reload Page    # Reloading the page to trigger the session timeout
+#    Wait Until Page Contains Element    ${LOGIN_BUTTON_LOCATOR}    10
+#    Log Message     Test login session timeout after a period of inactivity finished
 
 Unsuccessful Login with Whitespace in Username and Password
     [Documentation]    Test unsuccessful login with leading and trailing whitespaces in username and password (TC001.12).

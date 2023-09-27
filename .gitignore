@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+*.egg
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+*.pid
+*.seed
+
+# Directories used by tools like pytest
+.cache/
+test/__pycache__/
+test/*.pyc
+
+# Virtual environment
+venv/
+
+# IDE related
+.vscode/
+.idea/
